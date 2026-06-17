@@ -21,7 +21,7 @@ function toCSSSize(value: number | string | undefined): string | undefined {
 // ---------------------------------------------------------------------------
 
 // Maps Ink/cli-boxes border style names to CSS border-style values.
-const BORDER_STYLE_MAP: Record<string, CSSProperties['borderStyle']> = {
+const BORDER_STYLE_MAP: Record<string, CSSProperties['borderTopStyle']> = {
   single: 'solid',
   double: 'double',
   round: 'solid',     // approximated; borderRadius added below

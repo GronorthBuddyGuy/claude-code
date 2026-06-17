@@ -13,6 +13,12 @@ export interface PerformanceMetric {
   meta?: Record<string, unknown>;
 }
 
+// Not yet in the standard DOM lib typings.
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
 type MetricSink = (metric: PerformanceMetric) => void;
 
 let sink: MetricSink = () => {};
