@@ -198,8 +198,18 @@ export type CollabEvent =
   | SessionStateEvent
   | ErrorEvent;
 
+// Map each event-type string to its concrete event interface.
+type CollabEventMap = {
+  [E in CollabEvent as E["type"]]: E;
+};
+
+// Distributive Omit so each union member keeps its own properties.
+type DistributiveOmit<T, K extends PropertyKey> = T extends unknown
+  ? Omit<T, K>
+  : never;
+
 // Outgoing-only events (client → server) that don't need timestamp/sessionId
-export type OutgoingEvent = Omit<CollabEvent, "timestamp">;
+export type OutgoingEvent = DistributiveOmit<CollabEvent, "timestamp">;
 
 type EventHandler<T extends CollabEvent = CollabEvent> = (event: T) => void;
 
@@ -280,9 +290,9 @@ export class CollabSocket {
     this.ws.send(JSON.stringify({ ...event, timestamp: Date.now() }));
   }
 
-  on<T extends CollabEvent>(
-    type: T["type"],
-    handler: EventHandler<T>
+  on<K extends CollabEventType>(
+    type: K,
+    handler: (event: CollabEventMap[K]) => void
   ): () => void {
     if (!this.handlers.has(type)) {
       this.handlers.set(type, new Set());
@@ -291,7 +301,10 @@ export class CollabSocket {
     return () => this.off(type, handler);
   }
 
-  off<T extends CollabEvent>(type: T["type"], handler: EventHandler<T>): void {
+  off<K extends CollabEventType>(
+    type: K,
+    handler: (event: CollabEventMap[K]) => void
+  ): void {
     this.handlers.get(type)?.delete(handler as EventHandler);
   }
 
