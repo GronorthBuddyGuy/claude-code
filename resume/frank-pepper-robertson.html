@@ -140,12 +140,14 @@ body.editing .editnote{display:block}
 .csearch{display:grid;gap:6px;flex:1 1 240px;max-width:360px}
 .csearch input{font:inherit;font-size:.95rem;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
 .ctable{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
-.ctable table{border-collapse:collapse;width:100%;min-width:680px;font-size:.93rem}
+.ctable table{border-collapse:collapse;width:100%;min-width:620px;font-size:.93rem}
 .ctable th{text-align:left;font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
 .ctable td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 .ctable tr:last-child td{border-bottom:0}
 .ctable .num{text-align:right;white-space:nowrap;font-family:var(--mono);font-variant-numeric:tabular-nums}
 .ctable td.name b{display:block}
+.ctable td.name{color:var(--muted);font-size:.85rem}
+.ctable td.name b{color:var(--ink);font-size:.93rem}
 .ctable td.name code{font:.68rem var(--mono);color:var(--muted);word-break:break-all}
 .ctable td.when{font:.82rem var(--mono);white-space:nowrap;color:var(--muted)}
 .ctable td.rel{color:var(--muted);max-width:32ch}
@@ -217,10 +219,10 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   <div class="summary">
     <p data-k="summary">I've run crews, managed subcontractors, and scheduled work on job sites across BC and Alberta for twenty years. More recently I've founded two ventures and designed VantageOS, an AI-native project management platform for construction and public infrastructure: task lifecycles, risk engines, stage gates, lessons-learned capture, and human-in-the-loop controls for AI agents. I also hold a diploma in Sound Design for Visual Media and have shot and edited field footage professionally. For Robertson's Project Management course I can bring the theory, the jobsite examples, and the recorded audio and video.</p>
     <dl class="facts">
-      <div><dt>Certification</dt><dd data-k="cert"><span class="ph">PMP / CAPM status</span></dd></div>
+      <div><dt>Certification</dt><dd data-k="cert">CAPM: <span class="ph">exam date</span></dd></div>
       <div><dt>Field leadership</dt><dd>20+ years</dd></div>
       <div><dt>Ventures founded</dt><dd>GroNorth, VantageOS</dd></div>
-      <div><dt>Certificates</dt><dd data-k="certcount">160+ completed</dd></div>
+      <div><dt>Certificates</dt><dd data-k="certcount">123 listed</dd></div>
       <div><dt>Media training</dt><dd>VFS diploma, 2015</dd></div>
       <div><dt>Availability</dt><dd data-k="avail">Immediate</dd></div>
     </dl>
@@ -288,16 +290,16 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   <!-- CREDENTIALS -->
   <section id="certs">
     <div class="sec-head">
-      <div><p class="eyebrow">Continuing education · verified certificates</p><h2>Certificates</h2></div>
-      <p>Each certificate below has an ID the issuer can verify. My full list of 160+ is on <a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      <div><p class="eyebrow">Continuing education · 2020 – 2024</p><h2>Certificates</h2></div>
+      <p>Completed coursework from Coursera and LinkedIn Learning. Project management is shown first; use the filters to see the rest. The full list is on <a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener">LinkedIn</a>.</p>
     </div>
     <div class="cstats" id="cstats"></div>
     <div class="ctools">
-      <label class="csearch"><span class="eyebrow">Search</span><input id="cq" type="search" placeholder="e.g. data, AI, risk" autocomplete="off"></label>
+      <label class="csearch"><span class="eyebrow">Search</span><input id="cq" type="search" placeholder="e.g. agile, planning, AI" autocomplete="off"></label>
       <div class="filters" id="ccats" role="group" aria-label="Filter certificates"></div>
     </div>
     <div class="ctable"><table>
-      <thead><tr><th>Certificate</th><th>Type</th><th class="num">Hours</th><th class="num">CPE</th><th>Completed</th><th>Use in this course</th></tr></thead>
+      <thead><tr><th>Certificate</th><th>Category</th><th>Completed</th><th>Use in this course</th></tr></thead>
       <tbody id="cbody"></tbody>
     </table></div>
     <p class="cempty" id="cempty" hidden>No certificates match that search.</p>
@@ -307,7 +309,8 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
     <div class="sec-head"><div><p class="eyebrow">Education, certification, tools</p><h2>Credentials</h2></div></div>
     <div class="cols">
       <div class="list">
-        <div class="item"><span class="yr" data-k="certyr"><span class="ph">Year</span></span><div><h3 data-k="certname"><span class="ph">PMP® or CAPM® (PMI)</span></h3><p data-k="certnote"><span class="ph">Credential ID, or exam date if in progress</span></p></div></div>
+        <div class="item"><span class="yr" data-k="certyr"><span class="ph">Year</span></span><div><h3 data-k="certname">CAPM® (PMI)</h3><p data-k="certnote">Exam planned: <span class="ph">add date</span></p></div></div>
+        <div class="item"><span class="yr">2022</span><div><h3>Project management coursework, Coursera</h3><p>Foundations of Project Management (ID AE23ASMP6QA6) · Project Initiation: Starting a Successful Project (ID JGT6P6KJ4XPS) · Project Planning: Putting It All Together (ID UV3MRNTHTHUL)</p></div></div>
         <div class="item"><span class="yr">2015</span><div><h3>Diploma, Sound Design for Visual Media</h3><p>Vancouver Film School. Graduated top of class. Post-production audio, field recording, mixing, sync to picture.</p></div></div>
         <div class="item"><span class="yr">2005</span><div><h3>Pre-Employment Welding Foundation</h3><p>Lakeland College, Lloydminster AB. Top of class.</p></div></div>
         <div class="item"><span class="yr">2004</span><div><h3>Basic Welding</h3><p>College of the Rockies, Invermere BC. Top academic standing.</p></div></div>
@@ -339,10 +342,10 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
 
   /* ---------- Fit matrix ---------- */
   const FIT=[
-    {t:"req",q:"PMP or CAPM certification",s:"confirm",l:"Confirm",e:"<b>Add your status here before sending.</b> The posting lists this as required. If you hold neither yet, give a CAPM exam date. The posting says to apply anyway if you don't meet every requirement."},
-    {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. The course framework below is organized by PMI process group."},
+    {t:"req",q:"PMP or CAPM certification",s:"confirm",l:"Confirm",e:"<b>Not yet held.</b> I have completed the project management coursework that counts toward the CAPM's 23-hour education requirement: Coursera's <b>Foundations of Project Management</b>, <b>Project Initiation</b> and <b>Project Planning</b> (2022), plus LinkedIn Learning's <b>Project Management Foundations</b>. CAPM exam: <span class='ph'>add your planned date</span>."},
+    {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. Formal coursework: Coursera's Foundations of Project Management, Project Initiation and Project Planning, and LinkedIn Learning's Project Management Foundations, Business Benefits Realization and Agile Requirements Foundations. The course framework below is organized by PMI process group."},
     {t:"req",q:"Knowledge of and experience with managing projects",s:"strong",l:"Strong",e:"<b>20+ years</b> delivering projects on site: custom homes on Vancouver Island, a large retirement-community build in Vernon, Western Canada relocations as <b>Moving Foreman</b> (2008–2012), and 4–5 tree-removal projects a month as <b>Ground Lead</b>. Founder of GroNorth (2019–present)."},
-    {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Student leadership background."},
+    {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Completed <b>Virtual Training for Sales Trainers and Coaches</b>, and PowerPoint Essential Training for building course decks."},
     {t:"asset",q:"Using AI to manage projects",s:"strong",l:"Strong",e:"Designed <b>VantageOS</b>, an AI-native project operating system. AI agents triage risk, draft mitigation plans and flag schedule drift. Every critical action goes through deterministic gates and human approval, with an append-only audit log. I can teach both what AI does well in project work and where it needs guardrails. Coursework includes LinkedIn Learning's <b>Big Data in the Age of AI</b> and the 23-hour <b>Become a Data Scientist</b> path."},
     {t:"asset",q:"Developing training programs or courses",s:"good",l:"Evidence",e:"Wrote a <b>three-level training curriculum</b> (Technician → Lead Technician/Trainer → Operations Supervisor) so business knowledge lives in documented processes. The draft course framework on this page is a working sample."},
     {t:"req",q:"Analytical and critical thinking",s:"strong",l:"Strong",e:"Wrote long-form strategy and feasibility analyses: the VantageOS strategic thesis on Canadian infrastructure procurement, and a VK Accelerate business plan with SWOT, market research and financial projections."},
@@ -368,6 +371,9 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
     {lane:"Crew lead",items:[
       {id:"moving",a:2008.5,b:2013,c:"lead",lab:"Moving Foreman"},
       {id:"trees",a:2017,b:2020.6,c:"lead",lab:"Ground Lead"}]},
+    {lane:"Sales & service",items:[
+      {id:"westridge",a:2013.42,b:2014.9,c:"",lab:"GMC"},
+      {id:"carco",a:2016,b:2017.9,c:"",lab:"Sales"}]},
     {lane:"Field delivery",items:[
       {id:"rigs",a:2005.7,b:2008.45,c:"",lab:"Drilling rigs"},
       {id:"shake",a:2020.6,b:2024,c:"",lab:"Remote forestry"},
@@ -384,14 +390,25 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
       "Built governance for AI agents: routine actions run automatically, higher-risk actions need peer or consensus review, and critical actions need human sign-off recorded in an append-only log.",
       "Wrote a 24-month phased roadmap, a retrospective and lessons-learned module, and an investor thesis on the Canadian infrastructure procurement market."],
       pm:"Integration, risk, change control, stakeholder engagement, AI in project work"},
-    gronorth:{t:"GroNorth",w:"Founder & CEO · 2019–present",o:"Kamloops, BC",pts:[
+    gronorth:{t:"GroNorth",w:"Founder & CEO · Jul 2019 – present",o:"Kamloops, BC · Lewes, DE",pts:[
       "Founded and lead a vertical-farming venture focused on food security and climate resilience.",
       "Directed R&D for modular systems designed for scalable deployment in resource-limited regions.",
-      "Built a multidisciplinary team and led fundraising through sustainability and venture networks.",
+      "Led the company end to end: inception, product development, fundraising, team leadership and direction.",
       "Wrote a VK Accelerate business plan for a related field-services venture, including SWOT, market research, cash-flow projections and a Supervisor-Trainer staffing model."],
       pm:"Initiating, business case, resource planning, stakeholder management"},
+    westridge:{t:"Westridge GMC",w:"Service Advisor · Jun 2013 – Nov 2014",o:"Lloydminster, AB",pts:[
+      "Diagnosed likely vehicle issues with customers and dispatched work orders to mechanics.",
+      "Kept customers updated on the status of their vehicles and resolved their concerns."],
+      pm:"Work intake, dispatching, status reporting"},
+    carco:{t:"Carco Auto Credit · Upstat Marketing",w:"Finance Manager · Jul 2016 – Nov 2017 · Direct Sales · Jan – Jul 2016",o:"Edmonton, AB",pts:[
+      "Senior Sales Consultant and Finance Manager at a high-volume subprime dealership. Submitted and funded the most deals with TD, SDA, Cafinco and First Access.",
+      "Ran the full sales process on my own, from cold call to delivery, processing 5+ new credit applications a day.",
+      "Before Carco, ranked as a top performer in door-to-door sales of Telus Home Services for Upstat Marketing."],
+      pm:"Pipeline management, stakeholder negotiation, deadlines"},
     moving:{t:"Power Play Moving",w:"Moving Foreman · Jul 2008 – Dec 2012",o:"Lloydminster, AB",pts:[
       "Led residential and commercial relocations across Western Canada.",
+      "Supervised the crew and handled all customer relations.",
+      "Prepared delivery schedules and organized the crew for each move.",
       "Planned loads and rigging, and secured high-value freight.",
       "Managed customer service on site and kept trucks and equipment maintained."],
       pm:"Crew leadership, logistics planning, client communication"},
@@ -472,24 +489,21 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   mod(0);
 
   /* ---------- Certificates ---------- */
-  const CERTS=[
-    {n:"Become a Data Scientist",k:"Learning Path",h:23,cpe:null,d:"2023-11-27",c:"Data & AI",id:"38947d30ea98d9f956c278aee118d06280f249698d3d1c801f894c4ea33d3d3d",r:"Module 1 and Module 8 content on AI and data-driven project decisions"},
-    {n:"Become an Ethical Hacker",k:"Learning Path",h:32.93,cpe:null,d:"2023-11-19",c:"Security",id:"ba5b0221ebbb37bf00a8ec590eb18a59cb6d6fb818e4c37cb1337b2263916d4d",r:"Security and privacy risks when projects adopt AI tools"},
-    {n:"Big Data in the Age of AI",k:"Course",h:2.12,cpe:3.4,d:"2023-11-25",c:"Data & AI",id:"13662bb181fd1f098f55ebd126a4cf6da00cc75409d55a2b59da39d6f09774f0",r:"AI-in-practice segments across all modules"},
-    {n:"Data Visualization: Storytelling",k:"Course",h:1.57,cpe:3.0,d:"2023-11-25",c:"Communication",id:"736123ad131ea4ccacfbe87a4c0cf6a9fffb768d4da4512d014c295ea8e81419",r:"Status reports, dashboards and course slide design"},
-    {n:"Data, Economic Modeling, and Forecasting with Stata",k:"Course",h:0.82,cpe:1.8,d:"2023-11-20",c:"Finance & forecasting",id:"3a58165675d99d08fa478195ad2bc7780b75a8a44f93dbcfe2299ecef8a987bd",r:"Module 5 cost forecasting and EAC"}
-  ];
-  const ISS="LinkedIn Learning";
-  const fmtD=d=>new Date(d+"T12:00:00Z").toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"numeric",timeZone:"UTC"});
-  const fmtH=h=>{const hh=Math.floor(h),mm=Math.round((h-hh)*60);return mm?`${hh}h ${String(mm).padStart(2,"0")}m`:`${hh}h`};
-  const tot=CERTS.reduce((a,c)=>a+c.h,0),cpe=CERTS.reduce((a,c)=>a+(c.cpe||0),0);
-  $("#cstats").innerHTML=`<div><b>${CERTS.length}</b><span>verified on this page</span></div><div><b>${Math.round(tot)}</b><span>hours of study</span></div><div><b>${cpe.toFixed(1)}</b><span>NASBA CPE credits</span></div><div><b>160+</b><span>total on LinkedIn</span></div>`;
-  const cats=["All",...new Set(CERTS.map(c=>c.c))];let cat="All";
-  $("#ccats").innerHTML=cats.map(c=>`<button class="btn" data-c="${c}" aria-pressed="${c==="All"}">${c}</button>`).join("");
+  const CERTS=[["Strategic Planning Foundations", "2024-10", "P", "Project management", "Module 1: aligning projects to strategy"], ["Leading with Vision", "2024-10", "P", "Leadership & training", ""], ["Executive Leadership", "2024-09", "L", "Leadership & training", ""], ["Building Trust", "2024-09", "L", "Leadership & training", ""], ["Empathy for Sales Professionals", "2024-02", "L", "Sales", ""], ["Controlling the Sale", "2024-02", "L", "Sales", ""], ["Persuasive Selling", "2024-02", "L", "Sales", ""], ["Communicating with Confidence", "2024-02", "L", "Leadership & training", ""], ["Communicating Nonverbally", "2024-02", "L", "Leadership & training", ""], ["Virtual Training for Sales Trainers and Coaches", "2024-01", "L", "Leadership & training", "Recorded video delivery and virtual facilitation"], ["Transitioning to Management for Salespeople", "2024-01", "L", "Sales", ""], ["The Science of Sales", "2024-01", "L", "Sales", ""], ["The Persuasion Code, Part 1: The Neuroscience of Sales", "2024-01", "L", "Sales", ""], ["Solution Sales", "2024-01", "L", "Sales", ""], ["Sales Performance Measurement and Reporting", "2024-01", "L", "Sales", ""], ["Sales Management Foundations", "2024-01", "L", "Sales", ""], ["Sales Leadership: Building a Thriving Coaching Culture", "2024-01", "L", "Sales", ""], ["How to Motivate Your Sales Teams", "2024-01", "L", "Sales", ""], ["Growing as a Sales Manager", "2024-01", "L", "Sales", ""], ["Explore a Career as a Sales Manager", "2024-01", "L", "Sales", ""], ["Python: Design Patterns", "2023-12", "L", "Programming", ""], ["Python Practice: Real-World Coding Challenges", "2023-12", "L", "Programming", ""], ["Python GUI Development with Tkinter", "2023-12", "L", "Programming", ""], ["Python Essential Training", "2023-12", "L", "Programming", ""], ["Python Data Structures and Algorithms", "2023-12", "L", "Programming", ""], ["Python Automation and Testing", "2023-12", "L", "Programming", ""], ["Programming Foundations: Data Structures", "2023-12", "L", "Programming", ""], ["Level Up: Python", "2023-12", "L", "Programming", ""], ["Learning the Python 3 Standard Library", "2023-12", "L", "Programming", ""], ["Hands-On Introduction: Python", "2023-12", "L", "Programming", ""], ["Getting Started with Python", "2023-12", "L", "Programming", ""], ["Learning Excel: Data Analysis", "2023-11", "L", "Data & AI", ""], ["SQL: Data Reporting and Analysis", "2023-11", "L", "Data & AI", ""], ["Lessons from Data Scientists", "2023-11", "L", "Data & AI", ""], ["The Non-Technical Skills of Effective Data Scientists", "2023-11", "L", "Data & AI", ""], ["Tableau Essential Training", "2023-11", "L", "Data & AI", ""], ["Statistics Foundations 2: Probability", "2023-11", "L", "Data & AI", ""], ["Statistics Foundations 1: The Basics", "2023-11", "L", "Data & AI", ""], ["Starting Your Career as a Financial Analyst", "2023-11", "L", "Finance", ""], ["Side Hustle Strategies for Data Science and Analytics Experts", "2023-11", "L", "Data & AI", ""], ["Reinforcement Learning Foundations", "2023-11", "L", "Data & AI", ""], ["R Essential Training: Wrangling and Visualizing Data", "2023-11", "L", "Data & AI", ""], ["Power BI Essential Training", "2023-11", "L", "Data & AI", ""], ["Master Key Financial Analyst Skills", "2023-11", "L", "Finance", ""], ["Machine Learning Foundations: Linear Algebra", "2023-11", "L", "Data & AI", ""], ["Learning SQL Programming", "2023-11", "L", "Programming", ""], ["Learning Python", "2023-11", "L", "Programming", ""], ["Learning Java 11", "2023-11", "L", "Programming", ""], ["Learning Data Visualization", "2023-11", "L", "Data & AI", ""], ["Learning Data Governance", "2023-11", "L", "Data & AI", ""], ["Learning Data Analytics: 1 Foundations", "2023-11", "L", "Data & AI", ""], ["Learning Data Analytics Part 2: Extending and Applying Core Knowledge", "2023-11", "L", "Data & AI", ""], ["Learning C#", "2023-11", "L", "Programming", ""], ["JavaScript Essential Training", "2023-11", "L", "Programming", ""], ["Hands-On PyTorch Machine Learning", "2023-11", "L", "Data & AI", ""], ["Getting Started with AI and Machine Learning", "2023-11", "L", "Data & AI", "AI-in-practice segments across modules"], ["Financial Modeling and Forecasting Financial Statements", "2023-11", "L", "Finance", ""], ["Financial Modeling Foundations", "2023-11", "L", "Finance", "Module 5: budgets and cost baselines"], ["Excel Statistics Essential", "2023-11", "L", "Data & AI", ""], ["Ethical Hacking: Social Engineering", "2023-11", "L", "Security", ""], ["Ethical Hacking: Vulnerability Analysis", "2023-11", "L", "Security", ""], ["Ethical Hacking: The Complete Malware Analysis Process", "2023-11", "L", "Security", ""], ["Ethical Hacking: System Hacking", "2023-11", "L", "Security", ""], ["Ethical Hacking: Sniffers", "2023-11", "L", "Security", ""], ["Ethical Hacking: Session Hijacking", "2023-11", "L", "Security", ""], ["Ethical Hacking: Scanning Networks", "2023-11", "L", "Security", ""], ["Ethical Hacking: SQL Injection", "2023-11", "L", "Security", ""], ["Ethical Hacking: Introduction to Ethical Hacking", "2023-11", "L", "Security", ""], ["Ethical Hacking: Hacking Web Servers and Web Applications", "2023-11", "L", "Security", ""], ["Ethical Hacking: Hacking IoT Devices", "2023-11", "L", "Security", ""], ["Ethical Hacking: Footprinting and Reconnaissance (2016)", "2023-11", "L", "Security", ""], ["Ethical Hacking: Evading IDS, Firewalls, and Honeypots", "2023-11", "L", "Security", ""], ["Ethical Hacking: Enumeration", "2023-11", "L", "Security", ""], ["Ethical Hacking: Denial of Service", "2023-11", "L", "Security", ""], ["Ethical Hacking: Cryptography", "2023-11", "L", "Security", ""], ["Ethical Hacking: Cloud Computing", "2023-11", "L", "Security", ""], ["Deep Learning: Getting Started", "2023-11", "L", "Data & AI", ""], ["Data, Economic Modeling, and Forecasting with Stata", "2023-11", "L", "Finance", "Module 5: cost forecasting", "3a58165675d9…", "1.8 CPE"], ["Data Visualization: Storytelling", "2023-11", "L", "Leadership & training", "Status reports, dashboards and course slides", "736123ad131e…", "3.0 CPE"], ["Data Science and Analytics Career Paths and Certifications: First Steps", "2023-11", "L", "Data & AI", ""], ["Data Fluency: Exploring and Describing Data", "2023-11", "L", "Data & AI", ""], ["Data Cleaning in Python Essential Training", "2023-11", "L", "Data & AI", ""], ["Corporate Financial Statement Analysis", "2023-11", "L", "Finance", ""], ["Building Computer Vision Applications with Python", "2023-11", "L", "Data & AI", ""], ["Big Data in the Age of AI", "2023-11", "L", "Data & AI", "AI-in-practice segments across modules", "13662bb181fd…", "3.4 CPE"], ["Become an Ethical Hacker", "2023-11", "L", "Security", "Security risks when projects adopt AI tools", "ba5b0221ebbb…", "Learning Path · 32 h 56 m"], ["Become a Software Developer", "2023-11", "L", "Programming", ""], ["Become a Data Scientist", "2023-11", "L", "Data & AI", "Data-driven project decisions", "38947d30ea98…", "Learning Path · 23 h"], ["Become a Data Analyst", "2023-11", "L", "Data & AI", ""], ["Artificial Intelligence Foundations: Thinking Machines", "2023-11", "L", "Data & AI", ""], ["Artificial Intelligence Foundations: Neural Networks", "2023-11", "L", "Data & AI", ""], ["A Day In The Life of a Data Scientist", "2023-11", "L", "Data & AI", ""], ["Business Benefits Realization Foundations", "2023-10", "L", "Project management", "Module 8: benefits tracking at close-out"], ["Agile Requirements Foundations", "2023-10", "L", "Business analysis", "Module 1: agile and hybrid life cycles"], ["Business Analyst and Project Manager Collaboration", "2023-10", "L", "Project management", "Module 3: requirements and scope"], ["Business Analysis Foundations: Business Process Modeling", "2023-10", "L", "Business analysis", ""], ["Business Analysis Foundations", "2023-10", "L", "Business analysis", ""], ["What Is Business Analysis?", "2023-10", "L", "Business analysis", ""], ["Succeeding in Web Development: Full Stack and Front End", "2023-10", "L", "Programming", ""], ["Requirements Elicitation for Business Analysts: Interviews", "2023-10", "L", "Business analysis", ""], ["Requirements Elicitation and Analysis", "2023-10", "L", "Business analysis", "Module 3: requirements gathering"], ["Project Management Skills for Leaders", "2023-10", "L", "Project management", "Module 7: leading project teams"], ["Project Management Foundations", "2023-10", "L", "Project management", "Framework check against PMI terminology"], ["Programming Foundations: Fundamentals", "2023-10", "L", "Programming", ""], ["Programming Foundations: Databases", "2023-10", "L", "Programming", ""], ["PowerPoint Essential Training (Microsoft 365)", "2023-10", "L", "Leadership & training", "Branded slide decks for each module"], ["Negotiation Foundations", "2023-10", "L", "Leadership & training", ""], ["Measuring Team Performance", "2023-10", "L", "Leadership & training", "Module 7: team performance metrics"], ["Leadership Foundations", "2023-10", "L", "Leadership & training", ""], ["Interpersonal Communication", "2023-10", "L", "Leadership & training", ""], ["HTML Essential Training", "2023-10", "L", "Programming", ""], ["Getting Started as a Business Analyst", "2023-10", "L", "Business analysis", ""], ["Excel Quick Tips", "2023-10", "L", "Data & AI", ""], ["Data Science Foundations: Fundamentals", "2023-10", "L", "Data & AI", ""], ["Communication within Teams", "2023-10", "L", "Leadership & training", ""], ["Communication Foundations", "2023-10", "L", "Leadership & training", ""], ["CSS Essential Training", "2023-10", "L", "Programming", ""], ["Business Benefits Realization", "2023-10", "L", "Project management", "Module 8: benefits tracking at close-out"], ["Project Planning: Putting It All Together", "2022-04", "C", "Project management", "Modules 3–6: scope, schedule, budget and risk planning", "UV3MRNTHTHUL", ""], ["Foundations of Project Management", "2022-03", "C", "Project management", "Module 1: PM roles, life cycles and methodologies", "AE23ASMP6QA6", ""], ["Project Initiation: Starting a Successful Project", "2022-03", "C", "Project management", "Module 2: charters, stakeholders and success criteria", "JGT6P6KJ4XPS", ""], ["Learning Asana", "2021-09", "L", "Project management", "Tool demos for task tracking"], ["Holding Your Team Accountable", "2020-12", "L", "Leadership & training", ""]];
+  const ISSN={L:"LinkedIn Learning",C:"Coursera",P:"LinkedIn Learning · PMI"};
+  const CATS=["Project management","Business analysis","Leadership & training","Data & AI","Finance","Security","Programming","Sales"];
+  const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const fmtD=d=>MON[+d.slice(5,7)-1]+" "+d.slice(0,4);
+  const count=c=>CERTS.filter(x=>x[3]===c).length;
+  const pmN=count("Project management")+count("Business analysis");
+  $("#cstats").innerHTML=`<div><b>${CERTS.length}</b><span>certificates listed here</span></div><div><b>${pmN}</b><span>in project management &amp; business analysis</span></div><div><b>${CERTS.filter(x=>x[4]).length}</b><span>mapped to this course</span></div><div><b>2020–24</b><span>completion dates</span></div>`;
+  let cat="Project management";
+  $("#ccats").innerHTML=["All",...CATS].map(c=>`<button class="btn" data-c="${c}" aria-pressed="${c===cat}">${c} <span class="mono" style="opacity:.6">${c==="All"?CERTS.length:count(c)}</span></button>`).join("");
   function renderC(){
     const q=$("#cq").value.trim().toLowerCase();
-    const rows=CERTS.filter(c=>(cat==="All"||c.c===cat)&&(!q||(c.n+" "+c.c+" "+c.r+" "+c.k).toLowerCase().includes(q))).sort((a,b)=>b.d.localeCompare(a.d));
-    $("#cbody").innerHTML=rows.map(c=>`<tr><td class="name"><b>${c.n}</b>${ISS} · <code title="Certificate ID">ID ${c.id.slice(0,12)}…</code></td><td>${c.k}</td><td class="num">${fmtH(c.h)}</td><td class="num">${c.cpe?c.cpe.toFixed(2):"—"}</td><td class="when">${fmtD(c.d)}</td><td class="rel">${c.r}</td></tr>`).join("");
+    const rows=CERTS.filter(c=>(cat==="All"||c[3]===cat)&&(!q||(c.join(" ")).toLowerCase().includes(q)))
+      .sort((a,b)=>CATS.indexOf(a[3])-CATS.indexOf(b[3])||(!!b[4]-!!a[4])||b[1].localeCompare(a[1]));
+    $("#cbody").innerHTML=rows.map(c=>`<tr><td class="name"><b>${c[0]}</b>${ISSN[c[2]]}${c[6]?` · ${c[6]}`:""}${c[5]?` · <code title="Credential ID">ID ${c[5]}</code>`:""}</td><td>${c[3]}</td><td class="when">${fmtD(c[1])}</td><td class="rel">${c[4]||"—"}</td></tr>`).join("");
     $("#cempty").hidden=rows.length>0;
   }
   $("#ccats").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;$("#ccats").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderC()});
@@ -514,10 +528,10 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   function txt(el){return el?el.innerText.trim():""}
   $("#copyBtn").addEventListener("click",()=>{
     const k=x=>txt(document.querySelector(`[data-k="${x}"]`));
-    const order=["vantage","gronorth","trees","shake","moving","rigs","artknapp"];
+    const order=["vantage","gronorth","artknapp","trees","shake","carco","westridge","moving","rigs"];
     let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")}\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
     order.forEach(id=>{const d=D[id];out+=`\n${d.t} | ${d.w} | ${d.o}\n${d.pts.map(p=>"- "+p).join("\n")}\n`});
-    out+=`\nCERTIFICATES (160+ total; selected)\n${CERTS.map(c=>`- ${c.n}, ${ISS} (${c.d.slice(0,4)})`).join("\n")}\n`;
+    out+=`\nPROJECT MANAGEMENT CERTIFICATES\n${CERTS.filter(c=>c[3]==="Project management").map(c=>`- ${c[0]}, ${ISSN[c[2]]} (${c[1].slice(0,4)})${c[5]&&c[2]==="C"?" ID "+c[5]:""}`).join("\n")}\nPlus ${CERTS.length-count("Project management")} more in business analysis, leadership, data & AI, finance, security and programming.\n`;
     out+=`\nEDUCATION\n- Diploma, Sound Design for Visual Media, Vancouver Film School (2015)\n- Pre-Employment Welding Foundation, Lakeland College (2005)\n- Basic Welding, College of the Rockies (2004)\n\nSAFETY TICKETS\nFirst Line Supervisor, Construction Safety Training, Fall Protection, Confined Space, H2S Alive, WHMIS, First Aid/CPR\n`;
     const done=()=>flash("Copied");
     if(navigator.clipboard&&navigator.clipboard.writeText){
