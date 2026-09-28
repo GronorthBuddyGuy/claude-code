@@ -212,6 +212,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
       <div data-k="city"><span>Kamloops, BC</span></div>
       <div data-k="phone"><span>250-815-0170</span></div>
       <div data-k="email"><span>sdrmaster@outlook.com</span></div>
+      <div><a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener" style="color:var(--accent)">linkedin.com/in/frankmpepper</a></div>
       <div>Remote · up to 20 h/wk</div>
     </div>
   </header>
@@ -529,7 +530,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   $("#copyBtn").addEventListener("click",()=>{
     const k=x=>txt(document.querySelector(`[data-k="${x}"]`));
     const order=["vantage","gronorth","artknapp","trees","shake","carco","westridge","moving","rigs"];
-    let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")}\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
+    let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")} | linkedin.com/in/frankmpepper\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
     order.forEach(id=>{const d=D[id];out+=`\n${d.t} | ${d.w} | ${d.o}\n${d.pts.map(p=>"- "+p).join("\n")}\n`});
     out+=`\nPROJECT MANAGEMENT CERTIFICATES\n${CERTS.filter(c=>c[3]==="Project management").map(c=>`- ${c[0]}, ${ISSN[c[2]]} (${c[1].slice(0,4)})${c[5]&&c[2]==="C"?" ID "+c[5]:""}`).join("\n")}\nPlus ${CERTS.length-count("Project management")} more in business analysis, leadership, data & AI, finance, security and programming.\n`;
     out+=`\nEDUCATION\n- Diploma, Sound Design for Visual Media, Vancouver Film School (2015)\n- Pre-Employment Welding Foundation, Lakeland College (2005)\n- Basic Welding, College of the Rockies (2004)\n\nSAFETY TICKETS\nFirst Line Supervisor, Construction Safety Training, Fall Protection, Confined Space, H2S Alive, WHMIS, First Aid/CPR\n`;
