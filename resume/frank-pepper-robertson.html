@@ -76,6 +76,7 @@ body.editing .editnote{display:block}
 .chip{display:inline-flex;align-items:center;gap:6px;font:600 .72rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:4px;white-space:nowrap}
 .chip.strong{background:var(--ok-soft);color:var(--ok)}
 .chip.good{background:var(--steel-soft);color:var(--steel)}
+.chip.gap{background:var(--accent-soft);color:var(--accent)}
 .chip.confirm{background:var(--warn-soft);color:var(--warn)}
 .fit{display:grid;gap:0;border-top:1px solid var(--line)}
 .fit details{border-bottom:1px solid var(--line)}
@@ -220,7 +221,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   <div class="summary">
     <p data-k="summary">I've run crews, managed subcontractors, and scheduled work on job sites across BC and Alberta for twenty years. More recently I've founded two ventures and designed VantageOS, an AI-native project management platform for construction and public infrastructure: task lifecycles, risk engines, stage gates, lessons-learned capture, and human-in-the-loop controls for AI agents. I also hold a diploma in Sound Design for Visual Media and have shot and edited field footage professionally. For Robertson's Project Management course I can bring the theory, the jobsite examples, and the recorded audio and video.</p>
     <dl class="facts">
-      <div><dt>Certification</dt><dd data-k="cert">CAPM: <span class="ph">exam date</span></dd></div>
+      <div><dt>PM coursework</dt><dd>Coursera · LinkedIn Learning</dd></div>
       <div><dt>Field leadership</dt><dd>20+ years</dd></div>
       <div><dt>Ventures founded</dt><dd>GroNorth, VantageOS</dd></div>
       <div><dt>Certificates</dt><dd data-k="certcount">123 listed</dd></div>
@@ -310,8 +311,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
     <div class="sec-head"><div><p class="eyebrow">Education, certification, tools</p><h2>Credentials</h2></div></div>
     <div class="cols">
       <div class="list">
-        <div class="item"><span class="yr" data-k="certyr"><span class="ph">Year</span></span><div><h3 data-k="certname">CAPM® (PMI)</h3><p data-k="certnote">Exam planned: <span class="ph">add date</span></p></div></div>
-        <div class="item"><span class="yr">2022</span><div><h3>Project management coursework, Coursera</h3><p>Foundations of Project Management (ID AE23ASMP6QA6) · Project Initiation: Starting a Successful Project (ID JGT6P6KJ4XPS) · Project Planning: Putting It All Together (ID UV3MRNTHTHUL)</p></div></div>
+                <div class="item"><span class="yr">2022</span><div><h3>Project management coursework, Coursera</h3><p>Foundations of Project Management (ID AE23ASMP6QA6) · Project Initiation: Starting a Successful Project (ID JGT6P6KJ4XPS) · Project Planning: Putting It All Together (ID UV3MRNTHTHUL)</p></div></div>
         <div class="item"><span class="yr">2015</span><div><h3>Diploma, Sound Design for Visual Media</h3><p>Vancouver Film School. Graduated top of class. Post-production audio, field recording, mixing, sync to picture.</p></div></div>
         <div class="item"><span class="yr">2005</span><div><h3>Pre-Employment Welding Foundation</h3><p>Lakeland College, Lloydminster AB. Top of class.</p></div></div>
         <div class="item"><span class="yr">2004</span><div><h3>Basic Welding</h3><p>College of the Rockies, Invermere BC. Top academic standing.</p></div></div>
@@ -343,7 +343,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
 
   /* ---------- Fit matrix ---------- */
   const FIT=[
-    {t:"req",q:"PMP or CAPM certification",s:"confirm",l:"Confirm",e:"<b>Not yet held.</b> I have completed the project management coursework that counts toward the CAPM's 23-hour education requirement: Coursera's <b>Foundations of Project Management</b>, <b>Project Initiation</b> and <b>Project Planning</b> (2022), plus LinkedIn Learning's <b>Project Management Foundations</b>. CAPM exam: <span class='ph'>add your planned date</span>."},
+    {t:"req",q:"PMP or CAPM certification",s:"gap",l:"Gap",e:"<b>I don't hold a PMP or CAPM.</b> What I bring instead: 20+ years delivering projects in the field, formal project management coursework (Coursera's <b>Foundations of Project Management</b>, <b>Project Initiation</b> and <b>Project Planning</b>, plus LinkedIn Learning's <b>Project Management Foundations</b> and <b>Project Management Skills for Leaders</b>), and hands-on experience designing an AI-driven project management platform. The posting invites applicants who don't meet every requirement."},
     {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. Formal coursework: Coursera's Foundations of Project Management, Project Initiation and Project Planning, and LinkedIn Learning's Project Management Foundations, Business Benefits Realization and Agile Requirements Foundations. The course framework below is organized by PMI process group."},
     {t:"req",q:"Knowledge of and experience with managing projects",s:"strong",l:"Strong",e:"<b>20+ years</b> delivering projects on site: custom homes on Vancouver Island, a large retirement-community build in Vernon, Western Canada relocations as <b>Moving Foreman</b> (2008–2012), and 4–5 tree-removal projects a month as <b>Ground Lead</b>. Founder of GroNorth (2019–present)."},
     {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Completed <b>Virtual Training for Sales Trainers and Coaches</b>, and PowerPoint Essential Training for building course decks."},
@@ -530,7 +530,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   $("#copyBtn").addEventListener("click",()=>{
     const k=x=>txt(document.querySelector(`[data-k="${x}"]`));
     const order=["vantage","gronorth","artknapp","trees","shake","carco","westridge","moving","rigs"];
-    let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")} | linkedin.com/in/frankmpepper\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
+    let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")} | linkedin.com/in/frankmpepper\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\nEXPERIENCE\n`;
     order.forEach(id=>{const d=D[id];out+=`\n${d.t} | ${d.w} | ${d.o}\n${d.pts.map(p=>"- "+p).join("\n")}\n`});
     out+=`\nPROJECT MANAGEMENT CERTIFICATES\n${CERTS.filter(c=>c[3]==="Project management").map(c=>`- ${c[0]}, ${ISSN[c[2]]} (${c[1].slice(0,4)})${c[5]&&c[2]==="C"?" ID "+c[5]:""}`).join("\n")}\nPlus ${CERTS.length-count("Project management")} more in business analysis, leadership, data & AI, finance, security and programming.\n`;
     out+=`\nEDUCATION\n- Diploma, Sound Design for Visual Media, Vancouver Film School (2015)\n- Pre-Employment Welding Foundation, Lakeland College (2005)\n- Basic Welding, College of the Rockies (2004)\n\nSAFETY TICKETS\nFirst Line Supervisor, Construction Safety Training, Fall Protection, Confined Space, H2S Alive, WHMIS, First Aid/CPR\n`;
