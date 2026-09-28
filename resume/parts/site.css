@@ -103,7 +103,7 @@ figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-sp
   .photos img,.rintro .studio img{height:260px}
 }
 
-/* The course-module mapping belongs to the Robertson page only. */
+/* Hide the course-module column on the personal site. */
 .ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}
 
 /* Academia.edu publications */

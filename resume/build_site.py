@@ -2,7 +2,6 @@
 
 Outputs:
   site/index.html            personal site with Work / Research / Music tabs
-  site/robertson/index.html  the full Robertson College application page
   site/CNAME                 custom domain for GitHub Pages
 
 Run from this directory:  python3 build_site.py
@@ -39,14 +38,6 @@ def sub1(s, old, new):
     return s.replace(old, new, 1)
 
 
-# ---------------------------------------------------------------- Robertson page
-rob = SRC
-rob = sub1(rob, '    <nav aria-label="Sections">',
-           '    <nav aria-label="Sections">\n      <a href="../">← FrankPepper.com</a>')
-(OUT / "robertson").mkdir(parents=True, exist_ok=True)
-(OUT / "robertson" / "index.html").write_text(doc(rob, "Frank Pepper: application for the Project Management "
-                                                        "Subject Matter Expert contract at Robertson College."))
-
 # ---------------------------------------------------------------- Personal site
 style = between(SRC, "<title>", "</style>", inclusive=False)
 style = style.replace("<title>Frank Pepper Resume</title>", "<title>Frank Pepper</title>")
@@ -61,7 +52,6 @@ bar = f'''
       <a role="tab" href="#work" id="t-work" aria-controls="work">Work</a>
       <a role="tab" href="#research" id="t-research" aria-controls="research">Research</a>
       <a role="tab" href="#music" id="t-music" aria-controls="music">Music</a>
-      <a class="ext" href="robertson/index.html">Robertson application ↗</a>
     </nav>
   </div>
 </div>
@@ -71,6 +61,7 @@ hero = between(SRC, '  <header class="hero">', "  </header>")
 hero = sub1(hero, '<p class="eyebrow pill">Resume · Project Management SME · Robertson College</p>',
             '<p class="eyebrow pill">Founder, VantageOS · Lloydminster, SK</p>')
 hero = sub1(hero, "      <div>Remote · up to 20 h/wk</div>\n", "")
+hero = re.sub(r'      <div><a href="https://frankpepper.com"[^\n]*</div>\n', "", hero)
 hero = sub1(hero, '  <header class="hero">\n',
             '  <header class="hero withphoto">\n'
             '    <img class="headshot" src="img/headshot.jpg" alt="Frank Pepper" width="320" height="320">\n')
@@ -97,6 +88,7 @@ script = between(SRC, "<script>", "</script>")
 # The Work tab has no qualification-fit or course-framework sections.
 script = re.sub(r"  /\* ---------- Fit matrix ---------- \*/.*?(?=  /\* ---------- Gantt)", "", script, flags=re.S)
 script = re.sub(r"  /\* ---------- Course framework ---------- \*/.*?(?=  /\* ---------- Certificates)", "", script, flags=re.S)
+script = script.replace(" This is the skill set behind Robertson's course video and audio deliverables.", "")
 script = script.replace("})();\n</script>", (HERE / "parts" / "site.js").read_text() + "})();\n</script>")
 
 body = f'''{style}{bar}
@@ -127,4 +119,4 @@ body = f'''{style}{bar}
 '''
 (OUT / "index.html").write_text(doc(body, DESC))
 (OUT / "CNAME").write_text("frankpepper.com\n")
-print("built", OUT / "index.html", "and", OUT / "robertson" / "index.html")
+print("built", OUT / "index.html")
