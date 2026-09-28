@@ -33,7 +33,8 @@ section { padding-top: 30px !important; }
 .ctable thead { display: table-header-group; }
 a { text-decoration: none; }
 footer { break-inside: avoid; }
-.vband, .vstats { break-inside: avoid; }
+.vstats { break-inside: avoid; }
+.hero .eyebrow.pill { white-space: nowrap; }
 .cstats { break-inside: avoid; }
 `;
 

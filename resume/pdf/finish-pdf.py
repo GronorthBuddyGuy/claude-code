@@ -45,6 +45,16 @@ for title, needle in SECTIONS:
                     toc.append([2, f"Module {n}: {MODULES[n - 1]}", i + 1, r.y0])
 
 toc.sort(key=lambda t: (t[2], t[3]))
+# Chromium paints its own #121212 page canvas behind the margins; repaint it in the
+# page colour (#070B13) so the margins match the design.
+GREY = b".0706 .0706 .0706 RG .0706 .0706 .0706 rg"
+NAVY = b".0275 .0431 .0745 RG .0275 .0431 .0745 rg"
+for page in doc:
+    for xref in page.get_contents():
+        stream = doc.xref_stream(xref)
+        if GREY in stream:
+            doc.update_stream(xref, stream.replace(GREY, NAVY, 1))
+
 doc.set_toc([[lvl, title, page, {"kind": pymupdf.LINK_GOTO, "page": page - 1, "to": pymupdf.Point(0, max(y - 12, 0))}] for lvl, title, page, y in toc])
 doc.set_metadata({
     "title": "Frank Pepper - Project Management Subject Matter Expert",
