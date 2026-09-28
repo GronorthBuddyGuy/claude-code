@@ -1,0 +1,467 @@
+<title>Frank Pepper · PM Course SME</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F4F5F1; --surface:#FFFFFF; --ink:#18233A; --muted:#556072; --line:#D9DDD6;
+  --accent:#C9531F; --accent-soft:#F7E3D8; --steel:#3E6E8E; --steel-soft:#DCE7EE;
+  --ok:#2F7A4F; --ok-soft:#DDEFE3; --warn:#9A6A00; --warn-soft:#F6EACB;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#11161F; --surface:#18202C; --ink:#E5E9EF; --muted:#9AA5B5; --line:#2C3747;
+  --accent:#F08A55; --accent-soft:#3A2519; --steel:#86B0CC; --steel-soft:#1E2F3D;
+  --ok:#6FC693; --ok-soft:#18311F; --warn:#E3B54E; --warn-soft:#352A12;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#11161F; --surface:#18202C; --ink:#E5E9EF; --muted:#9AA5B5; --line:#2C3747;
+  --accent:#F08A55; --accent-soft:#3A2519; --steel:#86B0CC; --steel-soft:#1E2F3D;
+  --ok:#6FC693; --ok-soft:#18311F; --warn:#E3B54E; --warn-soft:#352A12;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--body);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:1.55rem;font-weight:800;font-stretch:78%;letter-spacing:.01em;text-transform:uppercase}
+h3{font-size:1.1rem;font-weight:700;font-stretch:90%}
+p{margin:0}
+.eyebrow{font:600 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* toolbar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding:10px 16px}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 14px;font:600 .8rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.bar nav a{color:var(--muted);text-decoration:none}
+.bar nav a:hover{color:var(--accent)}
+.tools{display:flex;gap:8px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:6px 12px;font:600 .82rem var(--body)}
+.btn:hover{border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.toast{font:.8rem var(--mono);color:var(--ok)}
+
+/* header */
+header.hero{display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:end;padding-block:48px 32px;border-bottom:3px solid var(--ink)}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);font-weight:800;font-stretch:68%;letter-spacing:-.01em;text-transform:uppercase}
+.hero .role{font-family:var(--display);font-stretch:95%;font-weight:500;font-size:1.25rem;margin-top:10px}
+.hero .role b{color:var(--accent);font-weight:700}
+.contact{display:grid;gap:4px;font:.9rem var(--mono);text-align:right;color:var(--muted)}
+.contact span{color:var(--ink)}
+.summary{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;padding-block:28px 8px}
+.summary p{max-width:62ch;font-size:1.08rem}
+.facts{display:grid;gap:10px;align-content:start;border-left:1px solid var(--line);padding-left:24px}
+.facts div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:6px;font-size:.95rem}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-weight:600;text-align:right}
+
+section{padding-top:56px}
+.sec-head{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sec-head p{color:var(--muted);max-width:60ch;font-size:.95rem}
+
+/* placeholders + edit mode */
+.ph{background:var(--warn-soft);color:var(--warn);border-bottom:1.5px dashed var(--warn);padding:0 3px;border-radius:2px}
+body.editing [data-k]{outline:1.5px dashed var(--steel);outline-offset:2px;border-radius:2px;background:var(--steel-soft)}
+.editnote{display:none;margin-top:16px;padding:10px 14px;border:1px solid var(--steel);border-radius:6px;background:var(--steel-soft);font-size:.92rem}
+body.editing .editnote{display:block}
+
+/* fit matrix */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 .72rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:4px;white-space:nowrap}
+.chip.strong{background:var(--ok-soft);color:var(--ok)}
+.chip.good{background:var(--steel-soft);color:var(--steel)}
+.chip.confirm{background:var(--warn-soft);color:var(--warn)}
+.fit{display:grid;gap:0;border-top:1px solid var(--line)}
+.fit details{border-bottom:1px solid var(--line)}
+.fit summary{list-style:none;display:grid;grid-template-columns:5.5rem 1fr auto;gap:14px;align-items:center;padding:12px 4px;cursor:pointer}
+.fit summary::-webkit-details-marker{display:none}
+.fit summary:hover .q{color:var(--accent)}
+.fit .kind{font:.7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.fit .q{font-weight:600}
+.fit .ev{padding:0 4px 16px calc(5.5rem + 18px);color:var(--muted);max-width:calc(62ch + 7rem)}
+.fit .ev b{color:var(--ink)}
+.fit details[open] summary .q{color:var(--accent)}
+
+/* gantt */
+.gantt{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 18px 8px;overflow-x:auto}
+.ginner{min-width:640px}
+.gscale,.grow{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
+.gscale .ticks{position:relative;height:22px;border-bottom:1px solid var(--line)}
+.gscale .ticks span{position:absolute;bottom:4px;transform:translateX(-50%);font:.7rem var(--mono);color:var(--muted)}
+.grow{min-height:44px;border-bottom:1px dashed var(--line)}
+.grow .lane{font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.track{position:relative;height:44px;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100%/11.5) 100%}
+.gbar{position:absolute;top:10px;height:24px;border-radius:3px;border:0;background:var(--steel);color:var(--bg);font:600 .7rem/24px var(--mono);padding:0 6px;text-align:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.gbar.lead{background:var(--accent)}
+.gbar.edu{background:transparent;color:var(--steel);border:1.5px solid var(--steel);line-height:21px}
+.gbar[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
+.gbar.ongoing{border-top-right-radius:0;border-bottom-right-radius:0;background-image:linear-gradient(90deg,transparent 80%,rgba(255,255,255,.25))}
+.gdiamond{position:absolute;top:15px;width:14px;height:14px;background:var(--accent);transform:translateX(-50%) rotate(45deg);border:0;padding:0}
+.glegend{display:flex;flex-wrap:wrap;gap:16px;font-size:.82rem;color:var(--muted);padding:12px 0 6px}
+.glegend i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.detail{margin-top:18px;display:grid;grid-template-columns:220px 1fr;gap:24px;border-left:4px solid var(--accent);padding:4px 0 4px 20px}
+.detail .when{font:.85rem var(--mono);color:var(--muted)}
+.detail h3{font-size:1.35rem}
+.detail ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:6px;max-width:66ch}
+.detail .pm{margin-top:12px;font-size:.92rem;background:var(--accent-soft);padding:8px 12px;border-radius:4px;max-width:66ch}
+.detail .pm b{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-right:6px}
+
+/* course framework */
+.course{display:grid;grid-template-columns:260px 1fr;gap:24px}
+.mods{display:grid;gap:4px;align-content:start;counter-reset:m}
+.mods button{display:grid;grid-template-columns:2rem 1fr;gap:8px;align-items:baseline;text-align:left;border:1px solid transparent;background:none;padding:9px 10px;border-radius:6px}
+.mods button .n{font:600 .8rem var(--mono);color:var(--muted)}
+.mods button:hover{border-color:var(--line)}
+.mods button[aria-selected="true"]{background:var(--surface);border-color:var(--line)}
+.mods button[aria-selected="true"] .n{color:var(--accent)}
+.mods .pg{grid-column:2;font:.68rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.modpanel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 24px;display:grid;gap:18px;align-content:start}
+.modpanel h3{font-size:1.5rem;font-stretch:80%;text-transform:uppercase}
+.mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 28px}
+.mgrid h4{margin:0 0 4px;font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--steel)}
+.mgrid ul{margin:0;padding-left:1.1em;display:grid;gap:3px;font-size:.95rem}
+.mgrid p{font-size:.95rem}
+.draws{font-size:.9rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.draws b{color:var(--ink)}
+
+/* how I work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.work div{padding:16px 18px 18px 0;border-bottom:1px solid var(--line)}
+.work div:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.work div:not(:nth-child(3n+1)){padding-left:18px}
+.work h3{font-size:1rem;margin-bottom:6px}
+.work p{font-size:.93rem;color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.list{display:grid;gap:14px}
+.item{display:grid;grid-template-columns:4.2rem 1fr;gap:12px}
+.item .yr{font:.85rem var(--mono);color:var(--muted);padding-top:2px}
+.item p{font-size:.93rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{border:1px solid var(--line);border-radius:4px;padding:3px 8px;font-size:.85rem;background:var(--surface)}
+footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font:.8rem var(--mono);color:var(--muted)}
+
+@media (max-width:760px){
+  header.hero,.summary,.course,.cols,.detail{grid-template-columns:1fr}
+  .contact{text-align:left}
+  .facts{border-left:0;padding-left:0}
+  .mods{grid-template-columns:1fr 1fr}
+  .mgrid{grid-template-columns:1fr}
+  .work{grid-template-columns:1fr}
+  .work div{border-right:0!important;padding-left:0!important}
+  .fit summary{grid-template-columns:1fr auto}
+  .fit .kind{grid-column:1/-1}
+  .fit .ev{padding-left:4px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .gbar,.mods button,.btn{transition:box-shadow .15s,background-color .15s,border-color .15s}
+}
+</style>
+
+<div class="bar">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#fit">Fit</a><a href="#timeline">Timeline</a><a href="#course">Course draft</a><a href="#approach">Approach</a><a href="#credentials">Credentials</a>
+    </nav>
+    <div class="tools">
+      <span class="toast" id="toast" role="status"></span>
+      <button class="btn" id="editBtn" aria-pressed="false">Edit details</button>
+      <button class="btn" id="copyBtn">Copy as text</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Application · Subject Matter Expert · Robertson College</p>
+      <h1 data-k="name">Frank Pepper</h1>
+      <p class="role">Project Management SME for <b>course development</b>: <span data-k="tagline">field delivery, AI-driven project systems, and video production</span></p>
+    </div>
+    <div class="contact">
+      <div data-k="city"><span>Kamloops, BC</span></div>
+      <div data-k="phone"><span>250-815-0170</span></div>
+      <div data-k="email"><span>sdrmaster@outlook.com</span></div>
+      <div>Remote · up to 20 h/wk</div>
+    </div>
+  </header>
+
+  <div class="summary">
+    <p data-k="summary">I've run crews, managed subcontractors, and scheduled work on job sites across BC and Alberta for twenty years. More recently I've founded two ventures and designed VantageOS, an AI-native project management platform for construction and public infrastructure: task lifecycles, risk engines, stage gates, lessons-learned capture, and human-in-the-loop controls for AI agents. I also hold a diploma in Sound Design for Visual Media and have shot and edited field footage professionally. For Robertson's Project Management course I can bring the theory, the jobsite examples, and the recorded audio and video.</p>
+    <dl class="facts">
+      <div><dt>Certification</dt><dd data-k="cert"><span class="ph">PMP / CAPM status</span></dd></div>
+      <div><dt>Field leadership</dt><dd>20+ years</dd></div>
+      <div><dt>Ventures founded</dt><dd>GroNorth, VantageOS</dd></div>
+      <div><dt>Media training</dt><dd>VFS diploma, 2015</dd></div>
+      <div><dt>Availability</dt><dd data-k="avail">Immediate</dd></div>
+    </dl>
+  </div>
+  <p class="editnote">Click any outlined text to change it. Your edits stay in this browser only. Use <b>Copy as text</b> to paste the finished version into an application form.</p>
+
+  <!-- FIT -->
+  <section id="fit">
+    <div class="sec-head">
+      <div><p class="eyebrow">Posting requirements</p><h2>Qualification fit</h2></div>
+      <div class="filters" role="group" aria-label="Filter requirements">
+        <button class="btn" data-f="all" aria-pressed="true">All</button>
+        <button class="btn" data-f="req" aria-pressed="false">Required</button>
+        <button class="btn" data-f="asset" aria-pressed="false">Assets</button>
+      </div>
+    </div>
+    <div class="fit" id="fitList"></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="sec-head">
+      <div><p class="eyebrow">2004 – 2026 · select a bar</p><h2>Delivery timeline</h2></div>
+      <p>My career laid out as a Gantt chart. Each bar shows the role and the project management practice it gave me.</p>
+    </div>
+    <div class="gantt">
+      <div class="ginner" id="gantt"></div>
+      <div class="glegend">
+        <span><i style="background:var(--accent)"></i>Leading crews or ventures</span>
+        <span><i style="background:var(--steel)"></i>Field execution</span>
+        <span><i style="border:1.5px solid var(--steel)"></i>Education</span>
+        <span><i style="background:var(--accent);transform:rotate(45deg);width:10px"></i>Milestone</span>
+      </div>
+    </div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </section>
+
+  <!-- COURSE -->
+  <section id="course">
+    <div class="sec-head">
+      <div><p class="eyebrow">Working draft for the Course Developer</p><h2>“Project Management” course framework</h2></div>
+      <p>A starting framework I'd bring to the first meeting. It follows the PMI process groups and PMBOK® Guide principles. Every module pairs one video with an assessment modelled on a real PM task.</p>
+    </div>
+    <div class="course">
+      <div class="mods" role="tablist" id="mods" aria-label="Course modules"></div>
+      <div class="modpanel" role="tabpanel" id="modpanel"></div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="sec-head">
+      <div><p class="eyebrow">Responsibilities → how I'd deliver them</p><h2>Working with your team</h2></div>
+    </div>
+    <div class="work">
+      <div><h3>Course framework</h3><p>Draft module outcomes and sequencing with the Course Developer, then revise them against your Development and Design Framework.</p></div>
+      <div><h3>Video &amp; audio</h3><p>Record, mix and edit narration and on-location segments myself using my Vancouver Film School training, so your team receives clean, finished audio.</p></div>
+      <div><h3>Branded content</h3><p>Source readings and build slide decks inside the Robertson Branded Style Guidelines, with citations and accessibility checks done before hand-off.</p></div>
+      <div><h3>Authentic assessments</h3><p>Base each assessment on a real PM artifact, such as a charter, WBS, risk register, EVM status report or lessons-learned log, and pair it with a clear rubric.</p></div>
+      <div><h3>Technical questions</h3><p>Answer questions from the Course Developer and Instructional Designer within one business day, with examples from real projects.</p></div>
+      <div><h3>Tracking &amp; meetings</h3><p>Update the project tracking sheet as each deliverable moves, flag risks to the timeline early, and attend project meetings remotely as needed.</p></div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="sec-head"><div><p class="eyebrow">Education, certification, tools</p><h2>Credentials</h2></div></div>
+    <div class="cols">
+      <div class="list">
+        <div class="item"><span class="yr" data-k="certyr"><span class="ph">Year</span></span><div><h3 data-k="certname"><span class="ph">PMP® or CAPM® (PMI)</span></h3><p data-k="certnote"><span class="ph">Credential ID, or exam date if in progress</span></p></div></div>
+        <div class="item"><span class="yr">2015</span><div><h3>Diploma, Sound Design for Visual Media</h3><p>Vancouver Film School. Graduated top of class. Post-production audio, field recording, mixing, sync to picture.</p></div></div>
+        <div class="item"><span class="yr">2005</span><div><h3>Pre-Employment Welding Foundation</h3><p>Lakeland College, Lloydminster AB. Top of class.</p></div></div>
+        <div class="item"><span class="yr">2004</span><div><h3>Basic Welding</h3><p>College of the Rockies, Invermere BC. Top academic standing.</p></div></div>
+        <div class="item"><span class="yr">2004</span><div><h3>High School Diploma</h3><p>David Thompson Secondary. Student Council President and Head of the Leadership Committee.</p></div></div>
+      </div>
+      <div class="list">
+        <div><p class="eyebrow" style="margin-bottom:8px">Project management</p>
+          <div class="tags"><span>Scheduling</span><span>Crew supervision</span><span>Subcontractor coordination</span><span>Risk &amp; hazard assessment</span><span>SOP &amp; curriculum design</span><span>Stakeholder communication</span><span>Budget &amp; cash-flow planning</span><span>Blueprint &amp; code compliance</span></div></div>
+        <div><p class="eyebrow" style="margin-bottom:8px">AI &amp; systems</p>
+          <div class="tags"><span>AI agent workflow design</span><span>Human-in-the-loop controls</span><span>Task lifecycle modelling</span><span>Risk registers &amp; lessons learned</span><span>Roadmapping</span></div></div>
+        <div><p class="eyebrow" style="margin-bottom:8px">Media production</p>
+          <div class="tags"><span>Field recording</span><span>Voice-over &amp; mixing</span><span>Camera / GoPro capture</span><span>Video editing</span></div></div>
+        <div><p class="eyebrow" style="margin-bottom:8px">Safety tickets</p>
+          <div class="tags"><span>First Line Supervisor</span><span>Construction Safety Training</span><span>Fall Protection</span><span>Confined Space</span><span>H2S Alive</span><span>WHMIS</span><span>First Aid / CPR</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>References available on request</span>
+    <span>Legally eligible to work in Canada: <span data-k="elig"><span class="ph">confirm status</span></span></span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* ---------- Fit matrix ---------- */
+  const FIT=[
+    {t:"req",q:"PMP or CAPM certification",s:"confirm",l:"Confirm",e:"<b>Add your status here before sending.</b> The posting lists this as required. If you hold neither yet, give a CAPM exam date. The posting says to apply anyway if you don't meet every requirement."},
+    {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. The course framework below is organized by PMI process group."},
+    {t:"req",q:"Knowledge of and experience with managing projects",s:"strong",l:"Strong",e:"<b>20+ years</b> delivering projects on site: custom homes on Vancouver Island, a large retirement-community build in Vernon, Western Canada relocations as <b>Moving Foreman</b> (2008–2012), and 4–5 tree-removal projects a month as <b>Ground Lead</b>. Founder of GroNorth (2019–present)."},
+    {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Student leadership background."},
+    {t:"asset",q:"Using AI to manage projects",s:"strong",l:"Strong",e:"Designed <b>VantageOS</b>, an AI-native project operating system. AI agents triage risk, draft mitigation plans and flag schedule drift. Every critical action goes through deterministic gates and human approval, with an append-only audit log. I can teach both what AI does well in project work and where it needs guardrails."},
+    {t:"asset",q:"Developing training programs or courses",s:"good",l:"Evidence",e:"Wrote a <b>three-level training curriculum</b> (Technician → Lead Technician/Trainer → Operations Supervisor) so business knowledge lives in documented processes. The draft course framework on this page is a working sample."},
+    {t:"req",q:"Analytical and critical thinking",s:"strong",l:"Strong",e:"Wrote long-form strategy and feasibility analyses: the VantageOS strategic thesis on Canadian infrastructure procurement, and a VK Accelerate business plan with SWOT, market research and financial projections."},
+    {t:"req",q:"Written and verbal communication",s:"strong",l:"Strong",e:"Wrote investor memos, stakeholder briefs and technical references. Handled client communication on every job site. Produced narration and audio post-production as a trained sound designer."},
+    {t:"req",q:"Time management, prioritization and deadlines",s:"strong",l:"Strong",e:"Remote forestry work on 4:00 AM to 7:00 PM days in unpredictable coastal conditions, and 10+ hour rig shifts. Home builds delivered on schedule and on budget."},
+    {t:"req",q:"Collaborative team player",s:"strong",l:"Strong",e:"Worked in two-person falling crews, on rig crews, and as lead coordinator for multi-trade subcontractors. At VantageOS I worked across product, finance and compliance."},
+    {t:"req",q:"Legally eligible to work in Canada",s:"confirm",l:"Confirm",e:"<b>Confirm your status here.</b> The posting asks for documentation."}
+  ];
+  const fitList=$("#fitList");
+  fitList.innerHTML=FIT.map((f,i)=>`<details data-t="${f.t}"${i===4?" open":""}><summary><span class="kind">${f.t==="req"?"Required":"Asset"}</span><span class="q">${f.q}</span><span class="chip ${f.s}">${f.l}</span></summary><p class="ev">${f.e}</p></details>`).join("");
+  document.querySelectorAll("[data-f]").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll("[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    fitList.querySelectorAll("details").forEach(d=>d.hidden=!(b.dataset.f==="all"||d.dataset.t===b.dataset.f));
+  }));
+
+  /* ---------- Gantt ---------- */
+  const Y0=2004,Y1=2027;
+  const pct=y=>((y-Y0)/(Y1-Y0)*100);
+  const LANES=[
+    {lane:"Ventures",items:[
+      {id:"vantage",a:2026,b:2026.75,c:"lead ongoing",lab:"VantageOS"},
+      {id:"gronorth",a:2019,b:2026.75,c:"lead ongoing",lab:"GroNorth · Founder & CEO"}]},
+    {lane:"Crew lead",items:[
+      {id:"moving",a:2008.5,b:2013,c:"lead",lab:"Moving Foreman"},
+      {id:"trees",a:2017,b:2020.6,c:"lead",lab:"Ground Lead"}]},
+    {lane:"Field delivery",items:[
+      {id:"rigs",a:2005.7,b:2008.45,c:"",lab:"Drilling rigs"},
+      {id:"shake",a:2020.6,b:2024,c:"",lab:"Remote forestry"},
+      {id:"artknapp",a:2024.1,b:2025.45,c:"",lab:"Art Knapp"}]},
+    {lane:"Education",items:[
+      {id:"weld",a:2004,b:2005.25,c:"edu",lab:"Welding"},
+      {id:"vfs",a:2014.2,b:2015.5,c:"edu",lab:"VFS"}]}
+  ];
+  const MILES=[{id:"isdrc",y:2023.3,lane:1,t:"ISDRC Fellowship, 2023"}];
+  const D={
+    vantage:{t:"VantageOS",w:"Founder & product lead · 2026–present",o:"Kamloops, BC",pts:[
+      "Designed an AI-native project operating system for construction and public infrastructure, with risk, compliance, change management and safety modules on one shared project record.",
+      "Specified a mission and task lifecycle (brainstorm → plan → execute; todo → in progress → review → blocked → done) with priority triage and dependency tracking.",
+      "Built governance for AI agents: routine actions run automatically, higher-risk actions need peer or consensus review, and critical actions need human sign-off recorded in an append-only log.",
+      "Wrote a 24-month phased roadmap, a retrospective and lessons-learned module, and an investor thesis on the Canadian infrastructure procurement market."],
+      pm:"Integration, risk, change control, stakeholder engagement, AI in project work"},
+    gronorth:{t:"GroNorth",w:"Founder & CEO · 2019–present",o:"Kamloops, BC",pts:[
+      "Founded and lead a vertical-farming venture focused on food security and climate resilience.",
+      "Directed R&D for modular systems designed for scalable deployment in resource-limited regions.",
+      "Built a multidisciplinary team and led fundraising through sustainability and venture networks.",
+      "Wrote a VK Accelerate business plan for a related field-services venture, including SWOT, market research, cash-flow projections and a Supervisor-Trainer staffing model."],
+      pm:"Initiating, business case, resource planning, stakeholder management"},
+    moving:{t:"Power Play Moving",w:"Moving Foreman · Jul 2008 – Dec 2012",o:"Lloydminster, AB",pts:[
+      "Led residential and commercial relocations across Western Canada.",
+      "Planned loads and rigging, and secured high-value freight.",
+      "Managed customer service on site and kept trucks and equipment maintained."],
+      pm:"Crew leadership, logistics planning, client communication"},
+    trees:{t:"Danger-tree removal · Chris Davidson, Certified Faller",w:"Ground Lead & Climber · 2017 – 2020",o:"Vancouver Island, BC",pts:[
+      "Ran ground operations on 4–5 projects a month: rigging plans, rope management, drop zones and debris clearance.",
+      "Planned falling and escape routes, and assessed hazards on tight residential and commercial sites.",
+      "Produced all media: camera and GoPro capture, plus editing footage for documentation and promotion."],
+      pm:"Risk assessment, work planning, video documentation"},
+    rigs:{t:"Oilfield drilling & servicing",w:"Motorhand / Derrick Hand · 2005 – 2008",o:"Tempco, Ensign, Trailblazer, Partner Drilling",pts:[
+      "Worked on conventional, coil-tubing and top-drive rigs on 10+ hour shifts.",
+      "Earned First Line Supervisor, H2S Alive, Confined Space, Fall Protection and Blowout Prevention tickets."],
+      pm:"Procedure discipline, safety-critical teamwork"},
+    shake:{t:"Shake blocking & hand falling",w:"Power Saw Operator · 2017 – 2023",o:"Port Renfrew & Streamline Logging, Vancouver Island",pts:[
+      "Organized remote camp logistics and helicopter sling-load staging on 15-hour days.",
+      "Assessed terrain, planned falling and mitigated hazards on slopes too steep for machines.",
+      "Bucked logs to mill specification and kept all saws, rigging and safety gear in working order."],
+      pm:"Logistics, schedule pressure, hazard control"},
+    artknapp:{t:"Art Knapp Plantland",w:"General Labourer / Loader Operator · Feb 2024 – Jun 2025",o:"Kamloops, BC",pts:[
+      "Ran loaders and forklifts for seasonal setup and material logistics.",
+      "Supported hardscaping, seasonal retail builds and customer service during peak months."],
+      pm:"Seasonal planning, operations support"},
+    weld:{t:"Welding programs",w:"2004 – 2005",o:"College of the Rockies · Lakeland College",pts:["Basic Welding (2004) and Pre-Employment Welding Foundation (2005). Top of class in both."],pm:"Technical training"},
+    vfs:{t:"Vancouver Film School",w:"Diploma, Sound Design for Visual Media · 2015",o:"Vancouver, BC",pts:[
+      "Graduated top of class.",
+      "Trained in field recording, post-production audio, mixing and syncing sound to picture. This is the skill set behind Robertson's course video and audio deliverables."],
+      pm:"Course media production"},
+    isdrc:{t:"ISDRC Next Generation Leaders",w:"Fellow · 2023 – present",o:"International Sustainable Development Resource Centre, Geneva",pts:[
+      "Selected for a fellowship on systems innovation for sustainable development.",
+      "Took part in policy forums and climate-health dialogues."],pm:"Cross-sector stakeholder work"}
+  };
+  const g=$("#gantt");
+  let ticks="";for(let y=2004;y<=2026;y+=2)ticks+=`<span style="left:${pct(y)}%">${y}</span>`;
+  g.innerHTML=`<div class="gscale"><span></span><div class="ticks">${ticks}</div></div>`+
+    LANES.map((L,li)=>`<div class="grow"><span class="lane">${L.lane}</span><div class="track">${
+      L.items.map(it=>`<button class="gbar ${it.c}" data-id="${it.id}" aria-pressed="false" style="left:${pct(it.a)}%;width:${pct(it.b)-pct(it.a)}%" title="${it.lab}">${it.lab}</button>`).join("")+
+      MILES.filter(m=>m.lane===li).map(m=>`<button class="gdiamond" data-id="${m.id}" aria-label="${m.t}" title="${m.t}" style="left:${pct(m.y)}%"></button>`).join("")
+    }</div></div>`).join("");
+  function show(id){
+    const d=D[id];if(!d)return;
+    g.querySelectorAll("[data-id]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===id));
+    $("#detail").innerHTML=`<div><p class="when">${d.w}</p><p class="when">${d.o}</p></div><div><h3>${d.t}</h3><ul>${d.pts.map(p=>`<li>${p}</li>`).join("")}</ul><p class="pm"><b>PM practice</b>${d.pm}</p></div>`;
+  }
+  g.addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(b)show(b.dataset.id)});
+  show("vantage");
+
+  /* ---------- Course framework ---------- */
+  const MODS=[
+    {t:"Foundations of project work",pg:"Context",o:["Define projects, programs and operations","Compare predictive, agile and hybrid life cycles","Explain the PM role and PMBOK® principles"],v:"On a job site: the same build run three ways. Why the life cycle choice matters.",a:"Choose a life cycle for a given scenario and justify it in a one-page memo.",ai:"Where AI assistants fit across the life cycle, and where they don't."},
+    {t:"Initiating & stakeholders",pg:"Initiating",o:["Write a project charter","Build a stakeholder register and power/interest grid","Set success criteria"],v:"Walking a real client brief through to a signed charter.",a:"Draft a charter and stakeholder register for a community renovation case.",ai:"Using AI to draft a charter, then checking the draft critically."},
+    {t:"Scope & the WBS",pg:"Planning",o:["Gather and trace requirements","Decompose scope into a WBS","Write a WBS dictionary entry"],v:"Breaking a house frame into work packages, on location.",a:"Build a WBS to level 3 with dictionary entries for three work packages.",ai:"Prompting for a WBS and spotting what the model misses."},
+    {t:"Schedule",pg:"Planning",o:["Sequence activities and dependencies","Find the critical path","Read and build a Gantt chart"],v:"Critical path on a whiteboard, then the same schedule in software.",a:"Build a network diagram and Gantt chart, and identify the critical path and float.",ai:"How AI schedule-risk tools flag drift."},
+    {t:"Cost & earned value",pg:"Planning / M&C",o:["Estimate and build a cost baseline","Calculate PV, EV, AC, CPI and SPI","Forecast EAC"],v:"Why the project is 'on budget' but still in trouble: EVM in ten minutes.",a:"Write an EVM status report from a mid-project data set.",ai:"Automated variance alerts and when to override them."},
+    {t:"Risk & uncertainty",pg:"Planning / M&C",o:["Identify, analyze and rank risks","Plan responses","Maintain a live risk register"],v:"Hazard assessment before a tree fall: risk planning where mistakes are costly.",a:"Build a risk register with a probability/impact matrix and response owners.",ai:"AI risk triage with human sign-off on high-severity items."},
+    {t:"Executing, team & quality",pg:"Executing",o:["Lead and develop a team","Manage communications","Apply quality assurance and control"],v:"Tailgate meetings, handoffs and running a crew day to day.",a:"Write a communications plan and a weekly status update for a sponsor.",ai:"Meeting summaries and action tracking with AI."},
+    {t:"Change, closing & lessons learned",pg:"M&C / Closing",o:["Run integrated change control","Close out a project formally","Capture lessons learned"],v:"A change order from request to approval, and what the retrospective found.",a:"Assess a change request and write a close-out report with a lessons-learned log.",ai:"Building a lessons-learned knowledge base the next project can use."}
+  ];
+  const mods=$("#mods"),panel=$("#modpanel");
+  mods.innerHTML=MODS.map((m,i)=>`<button role="tab" id="mt${i}" aria-controls="modpanel" aria-selected="${i===0}" data-i="${i}"><span class="n mono">M${String(i+1).padStart(2,"0")}</span><span>${m.t}</span><span class="pg">${m.pg}</span></button>`).join("");
+  function mod(i){
+    const m=MODS[i];
+    mods.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.i==i));
+    panel.setAttribute("aria-labelledby","mt"+i);
+    panel.innerHTML=`<div><p class="eyebrow">Module ${i+1} of ${MODS.length} · ${m.pg}</p><h3>${m.t}</h3></div>
+      <div class="mgrid">
+        <div><h4>Learning outcomes</h4><ul>${m.o.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+        <div><h4>Video segment</h4><p>${m.v}</p></div>
+        <div><h4>Authentic assessment</h4><p>${m.a}</p></div>
+        <div><h4>AI in practice</h4><p>${m.ai}</p></div>
+      </div>
+      <p class="draws"><b>Deliverables:</b> 1 recorded video (narration mixed in-house) · slide deck to Robertson brand · curated readings · assessment brief + rubric</p>`;
+  }
+  mods.addEventListener("click",e=>{const b=e.target.closest("button");if(b)mod(+b.dataset.i)});
+  mods.addEventListener("keydown",e=>{
+    const cur=+document.activeElement.dataset.i;if(isNaN(cur))return;
+    let n=null;if(e.key==="ArrowDown"||e.key==="ArrowRight")n=(cur+1)%MODS.length;if(e.key==="ArrowUp"||e.key==="ArrowLeft")n=(cur-1+MODS.length)%MODS.length;
+    if(n!==null){e.preventDefault();mod(n);$("#mt"+n).focus()}
+  });
+  mod(0);
+
+  /* ---------- Edit mode ---------- */
+  const eds=[...document.querySelectorAll("[data-k]")];
+  eds.forEach(el=>{const v=store.get("fp-"+el.dataset.k);if(v!==null)el.innerHTML=v;});
+  const editBtn=$("#editBtn");
+  editBtn.addEventListener("click",()=>{
+    const on=editBtn.getAttribute("aria-pressed")!=="true";
+    editBtn.setAttribute("aria-pressed",on);editBtn.textContent=on?"Done editing":"Edit details";
+    document.body.classList.toggle("editing",on);
+    eds.forEach(el=>{el.contentEditable=on?"true":"false"});
+    if(!on)flash("Saved in this browser");
+  });
+  eds.forEach(el=>el.addEventListener("input",()=>store.set("fp-"+el.dataset.k,el.innerHTML)));
+
+  /* ---------- Copy as text ---------- */
+  function flash(t){const s=$("#toast");s.textContent=t;clearTimeout(flash.t);flash.t=setTimeout(()=>s.textContent="",2500)}
+  function txt(el){return el?el.innerText.trim():""}
+  $("#copyBtn").addEventListener("click",()=>{
+    const k=x=>txt(document.querySelector(`[data-k="${x}"]`));
+    const order=["vantage","gronorth","trees","shake","moving","rigs","artknapp"];
+    let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")}\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
+    order.forEach(id=>{const d=D[id];out+=`\n${d.t} | ${d.w} | ${d.o}\n${d.pts.map(p=>"- "+p).join("\n")}\n`});
+    out+=`\nEDUCATION\n- Diploma, Sound Design for Visual Media, Vancouver Film School (2015)\n- Pre-Employment Welding Foundation, Lakeland College (2005)\n- Basic Welding, College of the Rockies (2004)\n\nSAFETY TICKETS\nFirst Line Supervisor, Construction Safety Training, Fall Protection, Confined Space, H2S Alive, WHMIS, First Aid/CPR\n`;
+    const done=()=>flash("Copied");
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(out).then(done,()=>fallback(out));
+    }else fallback(out);
+  });
+  function fallback(t){
+    const ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;inset:10% 5%;width:90%;height:80%;z-index:20;font:13px var(--mono)";
+    document.body.appendChild(ta);ta.select();flash("Press Ctrl/Cmd+C, then Esc");
+    ta.addEventListener("keydown",e=>{if(e.key==="Escape")ta.remove()});ta.addEventListener("blur",()=>ta.remove());
+  }
+})();
+</script>
