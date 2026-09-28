@@ -40,6 +40,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hero .eyebrow.pill{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:6px 12px;margin-bottom:18px}
 .hero .role b{color:var(--accent)}
 .vband{margin-top:36px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--surface),rgba(16,24,41,.6));padding:26px;display:grid;gap:20px}
+.vband .vhead-r{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.vlink{font:600 .8rem var(--mono);letter-spacing:.04em;color:var(--on-accent);background:var(--accent);border-radius:999px;padding:7px 14px;text-decoration:none}
+.vlink:hover{filter:brightness(1.08)}
 .vband .vhead{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between}
 .vband h2{font-size:clamp(1.5rem,3.6vw,2.1rem)}
 .vband h2 span{color:var(--accent)}
@@ -206,7 +209,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 
 <div class="bar">
   <div class="wrap">
-    <span class="vmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></span>
+    <a class="vmark" href="https://vantageos.ca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></a>
     <nav aria-label="Sections">
       <a href="../">← FrankPepper.com</a>
       <a href="#fit">Fit</a><a href="#timeline">Timeline</a><a href="#course">Course draft</a><a href="#approach">Approach</a><a href="#certs">Certificates</a><a href="#credentials">Credentials</a>
@@ -225,6 +228,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
       <div data-k="city"><span>Lloydminster, SK</span></div>
       <div data-k="phone"><span>250-815-0170</span></div>
       <div data-k="email"><span>sdrmaster@outlook.com</span></div>
+      <div><a href="https://vantageos.ca" target="_blank" rel="noopener" style="color:var(--accent)">vantageos.ca</a></div>
       <div><a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener" style="color:var(--accent)">linkedin.com/in/frankmpepper</a></div>
       <div>Remote · up to 20 h/wk</div>
     </div>
@@ -245,8 +249,8 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 
   <section class="vband" aria-labelledby="vos-h">
     <div class="vhead">
-      <span class="vmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></span>
-      <span class="eyebrow">Founder · Lloydminster, SK</span>
+      <a class="vmark" href="https://vantageos.ca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></a>
+      <span class="vhead-r"><span class="eyebrow">Founder · Lloydminster, SK</span><a class="vlink" href="https://vantageos.ca" target="_blank" rel="noopener">Visit VantageOS.ca ↗</a></span>
     </div>
     <h2 id="vos-h">The Operating System for the <span>Physical Economy</span></h2>
     <p class="lede">VantageOS is the shared execution, compliance, provenance and risk layer through which governments, owners, contractors, trades, suppliers, insurers, lenders and regulators coordinate real-world work in Canada. It turns project management from after-the-fact reporting into one live, auditable project record.</p>
@@ -360,7 +364,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
   </section>
 
   <footer>
-    <span class="vmark" style="font-size:.85rem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span>&nbsp;·&nbsp;<span style="font-weight:500;color:var(--muted)">The Operating System for the Physical Economy</span></span>
+    <a class="vmark" href="https://vantageos.ca" target="_blank" rel="noopener" style="font-size:.85rem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span>&nbsp;·&nbsp;<span style="font-weight:500;color:var(--muted)">The Operating System for the Physical Economy</span></a>
     <span>References available on request</span>
   </footer>
 </main>
@@ -413,7 +417,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
   const MILES=[{id:"isdrc",y:2023.3,lane:1,t:"ISDRC Fellowship, 2023"}];
   const D={
     vantage:{t:"VantageOS",w:"Founder & product lead · 2026–present",o:"Lloydminster, SK",pts:[
-      "Building a Canada-first, AI-native operating system for project delivery in construction and public infrastructure: permitting, procurement, risk, compliance, safety and payments on one shared project record.",
+      "Building <a href='https://vantageos.ca' target='_blank' rel='noopener' style='color:var(--accent)'>VantageOS.ca</a>: a Canada-first, AI-native operating system for project delivery in construction and public infrastructure: permitting, procurement, risk, compliance, safety and payments on one shared project record.",
       "Specified a mission and task lifecycle (brainstorm → plan → execute; todo → in progress → review → blocked → done) with priority triage and dependency tracking.",
       "Built governance for AI agents: routine actions run automatically, higher-risk actions need peer or consensus review, and critical actions need human sign-off recorded in an append-only log.",
       "Wrote a 24-month phased roadmap, a retrospective and lessons-learned module, and an investor thesis on the Canadian infrastructure procurement market."],

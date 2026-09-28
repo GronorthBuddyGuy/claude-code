@@ -52,11 +52,11 @@ style = between(SRC, "<title>", "</style>", inclusive=False)
 style = style.replace("<title>Frank Pepper Resume</title>", "<title>Frank Pepper</title>")
 style += (HERE / "parts" / "site.css").read_text() + "</style>\n"
 
-logo = re.search(r'<span class="vmark">.*?</span></span>', SRC, re.S).group(0)
+logo = re.search(r'<a class="vmark"[^>]*>.*?</a>', SRC, re.S).group(0)
 bar = f'''
 <div class="bar">
   <div class="wrap">
-    {logo.replace('class="vmark"', 'class="vmark" title="VantageOS"')}
+    {logo.replace('class="vmark"', 'class="vmark" title="VantageOS.ca"')}
     <nav class="tabs" role="tablist" aria-label="Site sections">
       <a role="tab" href="#work" id="t-work" aria-controls="work">Work</a>
       <a role="tab" href="#research" id="t-research" aria-controls="research">Research</a>
