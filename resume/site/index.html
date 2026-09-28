@@ -290,6 +290,26 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 @media (prefers-reduced-motion:no-preference){
   .pwbtn,.chain button,.bar nav.tabs a{transition:background-color .15s,border-color .15s,color .15s}
 }
+/* photos */
+.hero.withphoto{grid-template-columns:auto 1fr auto}
+.hero.withphoto h1{font-size:clamp(2.4rem,5.6vw,4.4rem);white-space:nowrap}
+.headshot{width:168px;height:168px;max-width:100%;object-fit:cover;object-position:50% 30%;border-radius:20px;border:2px solid var(--accent);box-shadow:0 0 0 6px rgba(255,176,32,.12);align-self:center}
+.photos{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;padding-top:36px}
+.photos figure,.rintro .studio{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.photos img,.rintro .studio img{display:block;width:100%;max-width:100%;height:320px;object-fit:cover}
+.photos figure:first-child img{object-position:50% 35%}
+.photos figure:last-child img{object-position:50% 30%}
+figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-spacing:.03em}
+.rintro.withphoto{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;gap:20px 32px}
+.rintro-text{display:grid;gap:16px}
+.rintro .studio img{height:340px;object-position:50% 25%}
+@media (max-width:760px){
+  .hero.withphoto{grid-template-columns:1fr}
+  .headshot{width:120px;height:120px}
+  .photos,.rintro.withphoto{grid-template-columns:1fr}
+  .photos img,.rintro .studio img{height:260px}
+}
+
 /* The course-module mapping belongs to the Robertson page only. */
 .ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}
 </style>
@@ -307,7 +327,8 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 </div>
 
 <main class="wrap">
-  <header class="hero">
+  <header class="hero withphoto">
+    <img class="headshot" src="img/headshot.jpg" alt="Frank Pepper" width="320" height="320">
     <div>
       <p class="eyebrow pill">Founder, VantageOS · Lloydminster, SK</p>
       <h1 data-k="name">Frank Pepper</h1>
@@ -348,6 +369,12 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
     </div>
     <p class="src">Figures from the VantageOS Strategic Thesis, citing Government of Canada and Statistics Canada sources.</p>
   </section>
+
+  <section class="photos" aria-label="Photos">
+    <figure><img src="img/jobsite.jpg" alt="Frank on a framing job site, covered in sawdust" loading="lazy" width="900" height="900"><figcaption>On site: framing and structural carpentry</figcaption></figure>
+    <figure><img src="img/office.jpg" alt="Frank at his desk in a shirt and tie" loading="lazy" width="719" height="727"><figcaption>At the desk: sales and finance, Edmonton</figcaption></figure>
+  </section>
+
   <section id="timeline">
     <div class="sec-head">
       <div><p class="eyebrow">2004 – 2026 · select a bar</p><h2>Delivery timeline</h2></div>
@@ -518,10 +545,13 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 </div>
 
 <div class="tabpanel" id="music" role="tabpanel" aria-labelledby="t-music">
-  <section id="music-intro" class="rintro">
-    <p class="eyebrow">Sound · music · audio engineering</p>
-    <h2>Before the job sites, and alongside them: <span>sound</span>.</h2>
-    <p class="lede">I trained in sound design at Vancouver Film School and graduated top of my class. Since then I’ve recorded and mixed live and in the studio, mixed for clients, and worked with musicians, DJs, sound designers and production companies across Western Canada.</p>
+  <section id="music-intro" class="rintro withphoto">
+    <div class="rintro-text">
+      <p class="eyebrow">Sound · music · audio engineering</p>
+      <h2>Before the job sites, and alongside them: <span>sound</span>.</h2>
+      <p class="lede">I trained in sound design at Vancouver Film School and graduated top of my class. Since then I’ve recorded and mixed live and in the studio, mixed for clients, and worked with musicians, DJs, sound designers and production companies across Western Canada.</p>
+    </div>
+    <figure class="studio"><img src="img/studio.jpg" alt="Frank shouting in front of acoustic panels in a recording booth" loading="lazy" width="900" height="900"><figcaption>In the booth</figcaption></figure>
   </section>
 
   <section id="listen" hidden>

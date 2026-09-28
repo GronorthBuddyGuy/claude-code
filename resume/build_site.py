@@ -71,6 +71,16 @@ hero = between(SRC, '  <header class="hero">', "  </header>")
 hero = sub1(hero, '<p class="eyebrow pill">Resume · Project Management SME · Robertson College</p>',
             '<p class="eyebrow pill">Founder, VantageOS · Lloydminster, SK</p>')
 hero = sub1(hero, "      <div>Remote · up to 20 h/wk</div>\n", "")
+hero = sub1(hero, '  <header class="hero">\n',
+            '  <header class="hero withphoto">\n'
+            '    <img class="headshot" src="img/headshot.jpg" alt="Frank Pepper" width="320" height="320">\n')
+
+photos = '''
+  <section class="photos" aria-label="Photos">
+    <figure><img src="img/jobsite.jpg" alt="Frank on a framing job site, covered in sawdust" loading="lazy" width="900" height="900"><figcaption>On site: framing and structural carpentry</figcaption></figure>
+    <figure><img src="img/office.jpg" alt="Frank at his desk in a shirt and tie" loading="lazy" width="719" height="727"><figcaption>At the desk: sales and finance, Edmonton</figcaption></figure>
+  </section>
+'''
 
 summary = between(SRC, '  <div class="summary">', "    </dl>\n  </div>")
 summary = re.sub(r" For Robertson's Project Management course I bring[^<]*", "", summary)
@@ -96,6 +106,7 @@ body = f'''{style}{bar}
 
 <div class="tabpanel" id="work" role="tabpanel" aria-labelledby="t-work">
 {vband}
+{photos}
 {timeline}
 {certs}
 {creds}
