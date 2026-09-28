@@ -130,6 +130,28 @@ body.editing .editnote{display:block}
 .draws{font-size:.9rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
 .draws b{color:var(--ink)}
 
+
+/* certificates */
+.cstats{display:flex;flex-wrap:wrap;gap:12px 36px;margin-bottom:18px}
+.cstats div{display:grid;gap:2px}
+.cstats b{font:800 2rem/1 var(--display);font-stretch:75%;font-variant-numeric:tabular-nums}
+.cstats span{font-size:.85rem;color:var(--muted)}
+.ctools{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:end;justify-content:space-between;margin-bottom:12px}
+.csearch{display:grid;gap:6px;flex:1 1 240px;max-width:360px}
+.csearch input{font:inherit;font-size:.95rem;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.ctable{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.ctable table{border-collapse:collapse;width:100%;min-width:680px;font-size:.93rem}
+.ctable th{text-align:left;font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.ctable td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ctable tr:last-child td{border-bottom:0}
+.ctable .num{text-align:right;white-space:nowrap;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ctable td.name b{display:block}
+.ctable td.name code{font:.68rem var(--mono);color:var(--muted);word-break:break-all}
+.ctable td.when{font:.82rem var(--mono);white-space:nowrap;color:var(--muted)}
+.ctable td.rel{color:var(--muted);max-width:32ch}
+.cempty{padding:14px 4px;color:var(--muted)}
+#certs a{color:var(--accent)}
+
 /* how I work */
 .work{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
 .work div{padding:16px 18px 18px 0;border-bottom:1px solid var(--line)}
@@ -167,7 +189,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
 <div class="bar">
   <div class="wrap">
     <nav aria-label="Sections">
-      <a href="#fit">Fit</a><a href="#timeline">Timeline</a><a href="#course">Course draft</a><a href="#approach">Approach</a><a href="#credentials">Credentials</a>
+      <a href="#fit">Fit</a><a href="#timeline">Timeline</a><a href="#course">Course draft</a><a href="#approach">Approach</a><a href="#certs">Certificates</a><a href="#credentials">Credentials</a>
     </nav>
     <div class="tools">
       <span class="toast" id="toast" role="status"></span>
@@ -198,6 +220,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
       <div><dt>Certification</dt><dd data-k="cert"><span class="ph">PMP / CAPM status</span></dd></div>
       <div><dt>Field leadership</dt><dd>20+ years</dd></div>
       <div><dt>Ventures founded</dt><dd>GroNorth, VantageOS</dd></div>
+      <div><dt>Certificates</dt><dd data-k="certcount">160+ completed</dd></div>
       <div><dt>Media training</dt><dd>VFS diploma, 2015</dd></div>
       <div><dt>Availability</dt><dd data-k="avail">Immediate</dd></div>
     </dl>
@@ -263,6 +286,23 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   </section>
 
   <!-- CREDENTIALS -->
+  <section id="certs">
+    <div class="sec-head">
+      <div><p class="eyebrow">Continuing education · verified certificates</p><h2>Certificates</h2></div>
+      <p>Each certificate below has an ID the issuer can verify. My full list of 160+ is on <a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </div>
+    <div class="cstats" id="cstats"></div>
+    <div class="ctools">
+      <label class="csearch"><span class="eyebrow">Search</span><input id="cq" type="search" placeholder="e.g. data, AI, risk" autocomplete="off"></label>
+      <div class="filters" id="ccats" role="group" aria-label="Filter certificates"></div>
+    </div>
+    <div class="ctable"><table>
+      <thead><tr><th>Certificate</th><th>Type</th><th class="num">Hours</th><th class="num">CPE</th><th>Completed</th><th>Use in this course</th></tr></thead>
+      <tbody id="cbody"></tbody>
+    </table></div>
+    <p class="cempty" id="cempty" hidden>No certificates match that search.</p>
+  </section>
+
   <section id="credentials">
     <div class="sec-head"><div><p class="eyebrow">Education, certification, tools</p><h2>Credentials</h2></div></div>
     <div class="cols">
@@ -303,7 +343,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
     {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. The course framework below is organized by PMI process group."},
     {t:"req",q:"Knowledge of and experience with managing projects",s:"strong",l:"Strong",e:"<b>20+ years</b> delivering projects on site: custom homes on Vancouver Island, a large retirement-community build in Vernon, Western Canada relocations as <b>Moving Foreman</b> (2008–2012), and 4–5 tree-removal projects a month as <b>Ground Lead</b>. Founder of GroNorth (2019–present)."},
     {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Student leadership background."},
-    {t:"asset",q:"Using AI to manage projects",s:"strong",l:"Strong",e:"Designed <b>VantageOS</b>, an AI-native project operating system. AI agents triage risk, draft mitigation plans and flag schedule drift. Every critical action goes through deterministic gates and human approval, with an append-only audit log. I can teach both what AI does well in project work and where it needs guardrails."},
+    {t:"asset",q:"Using AI to manage projects",s:"strong",l:"Strong",e:"Designed <b>VantageOS</b>, an AI-native project operating system. AI agents triage risk, draft mitigation plans and flag schedule drift. Every critical action goes through deterministic gates and human approval, with an append-only audit log. I can teach both what AI does well in project work and where it needs guardrails. Coursework includes LinkedIn Learning's <b>Big Data in the Age of AI</b> and the 23-hour <b>Become a Data Scientist</b> path."},
     {t:"asset",q:"Developing training programs or courses",s:"good",l:"Evidence",e:"Wrote a <b>three-level training curriculum</b> (Technician → Lead Technician/Trainer → Operations Supervisor) so business knowledge lives in documented processes. The draft course framework on this page is a working sample."},
     {t:"req",q:"Analytical and critical thinking",s:"strong",l:"Strong",e:"Wrote long-form strategy and feasibility analyses: the VantageOS strategic thesis on Canadian infrastructure procurement, and a VK Accelerate business plan with SWOT, market research and financial projections."},
     {t:"req",q:"Written and verbal communication",s:"strong",l:"Strong",e:"Wrote investor memos, stakeholder briefs and technical references. Handled client communication on every job site. Produced narration and audio post-production as a trained sound designer."},
@@ -431,6 +471,31 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
   });
   mod(0);
 
+  /* ---------- Certificates ---------- */
+  const CERTS=[
+    {n:"Become a Data Scientist",k:"Learning Path",h:23,cpe:null,d:"2023-11-27",c:"Data & AI",id:"38947d30ea98d9f956c278aee118d06280f249698d3d1c801f894c4ea33d3d3d",r:"Module 1 and Module 8 content on AI and data-driven project decisions"},
+    {n:"Become an Ethical Hacker",k:"Learning Path",h:32.93,cpe:null,d:"2023-11-19",c:"Security",id:"ba5b0221ebbb37bf00a8ec590eb18a59cb6d6fb818e4c37cb1337b2263916d4d",r:"Security and privacy risks when projects adopt AI tools"},
+    {n:"Big Data in the Age of AI",k:"Course",h:2.12,cpe:3.4,d:"2023-11-25",c:"Data & AI",id:"13662bb181fd1f098f55ebd126a4cf6da00cc75409d55a2b59da39d6f09774f0",r:"AI-in-practice segments across all modules"},
+    {n:"Data Visualization: Storytelling",k:"Course",h:1.57,cpe:3.0,d:"2023-11-25",c:"Communication",id:"736123ad131ea4ccacfbe87a4c0cf6a9fffb768d4da4512d014c295ea8e81419",r:"Status reports, dashboards and course slide design"},
+    {n:"Data, Economic Modeling, and Forecasting with Stata",k:"Course",h:0.82,cpe:1.8,d:"2023-11-20",c:"Finance & forecasting",id:"3a58165675d99d08fa478195ad2bc7780b75a8a44f93dbcfe2299ecef8a987bd",r:"Module 5 cost forecasting and EAC"}
+  ];
+  const ISS="LinkedIn Learning";
+  const fmtD=d=>new Date(d+"T12:00:00Z").toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"numeric",timeZone:"UTC"});
+  const fmtH=h=>{const hh=Math.floor(h),mm=Math.round((h-hh)*60);return mm?`${hh}h ${String(mm).padStart(2,"0")}m`:`${hh}h`};
+  const tot=CERTS.reduce((a,c)=>a+c.h,0),cpe=CERTS.reduce((a,c)=>a+(c.cpe||0),0);
+  $("#cstats").innerHTML=`<div><b>${CERTS.length}</b><span>verified on this page</span></div><div><b>${Math.round(tot)}</b><span>hours of study</span></div><div><b>${cpe.toFixed(1)}</b><span>NASBA CPE credits</span></div><div><b>160+</b><span>total on LinkedIn</span></div>`;
+  const cats=["All",...new Set(CERTS.map(c=>c.c))];let cat="All";
+  $("#ccats").innerHTML=cats.map(c=>`<button class="btn" data-c="${c}" aria-pressed="${c==="All"}">${c}</button>`).join("");
+  function renderC(){
+    const q=$("#cq").value.trim().toLowerCase();
+    const rows=CERTS.filter(c=>(cat==="All"||c.c===cat)&&(!q||(c.n+" "+c.c+" "+c.r+" "+c.k).toLowerCase().includes(q))).sort((a,b)=>b.d.localeCompare(a.d));
+    $("#cbody").innerHTML=rows.map(c=>`<tr><td class="name"><b>${c.n}</b>${ISS} · <code title="Certificate ID">ID ${c.id.slice(0,12)}…</code></td><td>${c.k}</td><td class="num">${fmtH(c.h)}</td><td class="num">${c.cpe?c.cpe.toFixed(2):"—"}</td><td class="when">${fmtD(c.d)}</td><td class="rel">${c.r}</td></tr>`).join("");
+    $("#cempty").hidden=rows.length>0;
+  }
+  $("#ccats").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;$("#ccats").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderC()});
+  $("#cq").addEventListener("input",renderC);
+  renderC();
+
   /* ---------- Edit mode ---------- */
   const eds=[...document.querySelectorAll("[data-k]")];
   eds.forEach(el=>{const v=store.get("fp-"+el.dataset.k);if(v!==null)el.innerHTML=v;});
@@ -452,6 +517,7 @@ footer{margin-top:56px;padding-top:16px;border-top:3px solid var(--ink);display:
     const order=["vantage","gronorth","trees","shake","moving","rigs","artknapp"];
     let out=`${k("name").toUpperCase()}\n${k("city")} | ${k("phone")} | ${k("email")}\nProject Management Subject Matter Expert\n\nSUMMARY\n${k("summary")}\n\nCERTIFICATION\n${k("certname")} ${k("certyr")} ${k("certnote")}\n\nEXPERIENCE\n`;
     order.forEach(id=>{const d=D[id];out+=`\n${d.t} | ${d.w} | ${d.o}\n${d.pts.map(p=>"- "+p).join("\n")}\n`});
+    out+=`\nCERTIFICATES (160+ total; selected)\n${CERTS.map(c=>`- ${c.n}, ${ISS} (${c.d.slice(0,4)})`).join("\n")}\n`;
     out+=`\nEDUCATION\n- Diploma, Sound Design for Visual Media, Vancouver Film School (2015)\n- Pre-Employment Welding Foundation, Lakeland College (2005)\n- Basic Welding, College of the Rockies (2004)\n\nSAFETY TICKETS\nFirst Line Supervisor, Construction Safety Training, Fall Protection, Confined Space, H2S Alive, WHMIS, First Aid/CPR\n`;
     const done=()=>flash("Copied");
     if(navigator.clipboard&&navigator.clipboard.writeText){
