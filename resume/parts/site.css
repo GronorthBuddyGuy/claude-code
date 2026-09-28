@@ -1,0 +1,87 @@
+
+/* ---------- FrankPepper.com: tabs, research, music ---------- */
+[hidden]{display:none!important}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.bar nav.tabs a{font:600 .78rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;border:1px solid transparent}
+.bar nav.tabs a[role="tab"]:hover{color:var(--ink);border-color:var(--line)}
+.bar nav.tabs a[aria-selected="true"]{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
+.bar nav.tabs a.ext{color:var(--steel)}
+.bar nav.tabs a.ext:hover{border-color:var(--steel)}
+.tabpanel{padding-top:8px}
+
+.rintro{padding-top:48px;display:grid;gap:16px}
+.rintro h2{font-size:clamp(1.8rem,4.6vw,2.8rem);line-height:1.12;max-width:22ch}
+.rintro h2 span{color:var(--accent)}
+.lede{font-size:1.12rem;color:var(--muted);max-width:66ch}
+.note{font-size:.88rem;color:var(--muted);border-left:2px solid var(--steel);padding:4px 0 4px 12px;max-width:70ch}
+
+/* pathway */
+.pw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-areas:"chain card" "side card";gap:14px 28px;align-items:start}
+.pw-chain{grid-area:chain;list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
+.pw-chain li{position:relative}
+.pw-chain li:not(:last-child)::after{content:"";position:absolute;left:26px;bottom:-18px;width:2px;height:18px;background:linear-gradient(var(--accent),transparent)}
+.pwbtn{width:100%;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.pwbtn .n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);font:600 .8rem var(--mono)}
+.pwbtn b{font:600 .98rem var(--display)}
+.pwbtn small{display:block;color:var(--muted);font-size:.82rem}
+.pwbtn:hover{border-color:var(--accent)}
+.pwbtn[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.pwbtn[aria-selected="true"] .n{background:var(--accent);color:var(--on-accent)}
+.pw-side{grid-area:side}
+.pw-side .pwbtn .n{border-color:var(--steel);color:var(--steel)}
+.pw-side .pwbtn[aria-selected="true"]{border-color:var(--steel);background:var(--steel-soft)}
+.pw-side .pwbtn[aria-selected="true"] .n{background:var(--steel);color:var(--on-accent)}
+.pw-side .lab{font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--steel);margin:4px 0 8px}
+.pw-card{grid-area:card;position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:12px;padding:22px 24px;display:grid;gap:14px}
+.pw-card.side{border-top-color:var(--steel)}
+.pw-card h3{font-size:1.35rem}
+.pw-card p{color:var(--ink);max-width:62ch}
+.pw-card .ev{display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:12px}
+.pw-card .ev p{font-size:.93rem;color:var(--muted)}
+.pw-card .ev cite{display:block;font:normal .74rem var(--mono);color:var(--steel);margin-top:2px}
+
+/* papers */
+.papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:10px;align-content:start}
+.paper:first-child{grid-column:1/-1;border-top:2px solid var(--accent)}
+.paper h3{font-size:1.15rem;line-height:1.25}
+.paper > p:not(.eyebrow){color:var(--muted);font-size:.95rem;max-width:70ch}
+.paper summary{cursor:pointer;display:inline-flex;align-items:center;gap:8px;font:600 .82rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent);padding:8px 0;list-style:none}
+.paper summary::-webkit-details-marker{display:none}
+.paper summary::before{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid var(--accent);border-radius:50%}
+.paper details[open] summary::before{content:"−"}
+.fulltext{display:grid;gap:12px;max-width:68ch;padding:8px 0 4px}
+.fulltext h4{margin:12px 0 0;font:600 1.02rem var(--display);color:var(--accent)}
+.fulltext p{line-height:1.7}
+.refs{margin:0;padding-left:1.4em;display:grid;gap:6px;font-size:.86rem;color:var(--muted)}
+
+.agenda{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.agenda div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
+.agenda p{font-size:.9rem;color:var(--muted)}
+
+/* music */
+.chain{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chain button{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:600 .9rem var(--display)}
+.chain button:hover{border-color:var(--accent)}
+.chain button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chain .arrow{color:var(--muted);font-family:var(--mono)}
+.chain-card{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:10px}
+.chain-card p{color:var(--muted);max-width:66ch}
+.chain-card .tags span{background:var(--bg)}
+.wave{display:block;width:100%;max-width:100%;height:120px;margin-top:14px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tracks a{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.tracks a:hover{border-color:var(--accent)}
+.tracks a span{color:var(--muted);font-size:.85rem}
+
+@media (max-width:760px){
+  .pw{grid-template-columns:1fr;grid-template-areas:"chain" "side" "card"}
+  .pw-card{position:static}
+  .papers,.agenda,.tracks{grid-template-columns:1fr}
+  .bar .wrap{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pwbtn,.chain button,.bar nav.tabs a{transition:background-color .15s,border-color .15s,color .15s}
+}
+/* The course-module mapping belongs to the Robertson page only. */
+.ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}

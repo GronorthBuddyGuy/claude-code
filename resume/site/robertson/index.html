@@ -2,9 +2,9 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Frank Pepper, founder of VantageOS: building the future of project management in Canada. Career, research and music.">
+<meta name="description" content="Frank Pepper: application for the Project Management Subject Matter Expert contract at Robertson College.">
 <meta name="theme-color" content="#070B13">
-<title>Frank Pepper</title>
+<title>Frank Pepper Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -202,103 +202,14 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 @media (prefers-reduced-motion:no-preference){
   .gbar,.mods button,.btn{transition:box-shadow .15s,background-color .15s,border-color .15s}
 }
-
-/* ---------- FrankPepper.com: tabs, research, music ---------- */
-[hidden]{display:none!important}
-.tabs{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
-.bar nav.tabs a{font:600 .78rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px;border:1px solid transparent}
-.bar nav.tabs a[role="tab"]:hover{color:var(--ink);border-color:var(--line)}
-.bar nav.tabs a[aria-selected="true"]{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
-.bar nav.tabs a.ext{color:var(--steel)}
-.bar nav.tabs a.ext:hover{border-color:var(--steel)}
-.tabpanel{padding-top:8px}
-
-.rintro{padding-top:48px;display:grid;gap:16px}
-.rintro h2{font-size:clamp(1.8rem,4.6vw,2.8rem);line-height:1.12;max-width:22ch}
-.rintro h2 span{color:var(--accent)}
-.lede{font-size:1.12rem;color:var(--muted);max-width:66ch}
-.note{font-size:.88rem;color:var(--muted);border-left:2px solid var(--steel);padding:4px 0 4px 12px;max-width:70ch}
-
-/* pathway */
-.pw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-areas:"chain card" "side card";gap:14px 28px;align-items:start}
-.pw-chain{grid-area:chain;list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
-.pw-chain li{position:relative}
-.pw-chain li:not(:last-child)::after{content:"";position:absolute;left:26px;bottom:-18px;width:2px;height:18px;background:linear-gradient(var(--accent),transparent)}
-.pwbtn{width:100%;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.pwbtn .n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);font:600 .8rem var(--mono)}
-.pwbtn b{font:600 .98rem var(--display)}
-.pwbtn small{display:block;color:var(--muted);font-size:.82rem}
-.pwbtn:hover{border-color:var(--accent)}
-.pwbtn[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft)}
-.pwbtn[aria-selected="true"] .n{background:var(--accent);color:var(--on-accent)}
-.pw-side{grid-area:side}
-.pw-side .pwbtn .n{border-color:var(--steel);color:var(--steel)}
-.pw-side .pwbtn[aria-selected="true"]{border-color:var(--steel);background:var(--steel-soft)}
-.pw-side .pwbtn[aria-selected="true"] .n{background:var(--steel);color:var(--on-accent)}
-.pw-side .lab{font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--steel);margin:4px 0 8px}
-.pw-card{grid-area:card;position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:12px;padding:22px 24px;display:grid;gap:14px}
-.pw-card.side{border-top-color:var(--steel)}
-.pw-card h3{font-size:1.35rem}
-.pw-card p{color:var(--ink);max-width:62ch}
-.pw-card .ev{display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:12px}
-.pw-card .ev p{font-size:.93rem;color:var(--muted)}
-.pw-card .ev cite{display:block;font:normal .74rem var(--mono);color:var(--steel);margin-top:2px}
-
-/* papers */
-.papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:10px;align-content:start}
-.paper:first-child{grid-column:1/-1;border-top:2px solid var(--accent)}
-.paper h3{font-size:1.15rem;line-height:1.25}
-.paper > p:not(.eyebrow){color:var(--muted);font-size:.95rem;max-width:70ch}
-.paper summary{cursor:pointer;display:inline-flex;align-items:center;gap:8px;font:600 .82rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent);padding:8px 0;list-style:none}
-.paper summary::-webkit-details-marker{display:none}
-.paper summary::before{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid var(--accent);border-radius:50%}
-.paper details[open] summary::before{content:"−"}
-.fulltext{display:grid;gap:12px;max-width:68ch;padding:8px 0 4px}
-.fulltext h4{margin:12px 0 0;font:600 1.02rem var(--display);color:var(--accent)}
-.fulltext p{line-height:1.7}
-.refs{margin:0;padding-left:1.4em;display:grid;gap:6px;font-size:.86rem;color:var(--muted)}
-
-.agenda{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.agenda div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
-.agenda p{font-size:.9rem;color:var(--muted)}
-
-/* music */
-.chain{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.chain button{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:600 .9rem var(--display)}
-.chain button:hover{border-color:var(--accent)}
-.chain button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.chain .arrow{color:var(--muted);font-family:var(--mono)}
-.chain-card{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:10px}
-.chain-card p{color:var(--muted);max-width:66ch}
-.chain-card .tags span{background:var(--bg)}
-.wave{display:block;width:100%;max-width:100%;height:120px;margin-top:14px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
-.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.tracks a{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink);text-decoration:none}
-.tracks a:hover{border-color:var(--accent)}
-.tracks a span{color:var(--muted);font-size:.85rem}
-
-@media (max-width:760px){
-  .pw{grid-template-columns:1fr;grid-template-areas:"chain" "side" "card"}
-  .pw-card{position:static}
-  .papers,.agenda,.tracks{grid-template-columns:1fr}
-  .bar .wrap{justify-content:flex-start}
-}
-@media (prefers-reduced-motion:no-preference){
-  .pwbtn,.chain button,.bar nav.tabs a{transition:background-color .15s,border-color .15s,color .15s}
-}
-/* The course-module mapping belongs to the Robertson page only. */
-.ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}
 </style>
 
 <div class="bar">
   <div class="wrap">
-    <span class="vmark" title="VantageOS"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></span>
-    <nav class="tabs" role="tablist" aria-label="Site sections">
-      <a role="tab" href="#work" id="t-work" aria-controls="work">Work</a>
-      <a role="tab" href="#research" id="t-research" aria-controls="research">Research</a>
-      <a role="tab" href="#music" id="t-music" aria-controls="music">Music</a>
-      <a class="ext" href="robertson/index.html">Robertson application ↗</a>
+    <span class="vmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></span>
+    <nav aria-label="Sections">
+      <a href="../">← FrankPepper.com</a>
+      <a href="#fit">Fit</a><a href="#timeline">Timeline</a><a href="#course">Course draft</a><a href="#approach">Approach</a><a href="#certs">Certificates</a><a href="#credentials">Credentials</a>
     </nav>
   </div>
 </div>
@@ -306,7 +217,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 <main class="wrap">
   <header class="hero">
     <div>
-      <p class="eyebrow pill">Founder, VantageOS · Lloydminster, SK</p>
+      <p class="eyebrow pill">Resume · Project Management SME · Robertson College</p>
       <h1 data-k="name">Frank Pepper</h1>
       <p class="role">Building the future of <b>project management in Canada</b>.</p>
     </div>
@@ -315,20 +226,23 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
       <div data-k="phone"><span>250-815-0170</span></div>
       <div data-k="email"><span>sdrmaster@outlook.com</span></div>
       <div><a href="https://www.linkedin.com/in/frankmpepper" target="_blank" rel="noopener" style="color:var(--accent)">linkedin.com/in/frankmpepper</a></div>
+      <div>Remote · up to 20 h/wk</div>
     </div>
   </header>
+
   <div class="summary">
-    <p data-k="summary">VantageOS, the platform I'm designing, is an AI-native operating system for how Canadian projects are planned, approved, delivered and proven, with one shared record for owners, contractors, trades, regulators and public agencies. It rests on twenty years of doing the work: running crews, managing subcontractors and scheduling jobs across BC and Alberta, often while holding two or three jobs at once. I also founded GroNorth, hold a diploma in Sound Design for Visual Media, and have shot and edited field footage professionally. I bring the theory, the jobsite examples, and the recorded audio and video to everything I teach and build.</p>
+    <p data-k="summary">VantageOS, the platform I'm designing, is an AI-native operating system for how Canadian projects are planned, approved, delivered and proven, with one shared record for owners, contractors, trades, regulators and public agencies. It rests on twenty years of doing the work: running crews, managing subcontractors and scheduling jobs across BC and Alberta, often while holding two or three jobs at once. I also founded GroNorth, hold a diploma in Sound Design for Visual Media, and have shot and edited field footage professionally. For Robertson's Project Management course I bring the theory, the jobsite examples, and the recorded audio and video.</p>
     <dl class="facts">
       <div><dt>PMI contact hours</dt><dd>30.25 PDUs</dd></div>
       <div><dt>Field leadership</dt><dd>20+ years</dd></div>
       <div><dt>Ventures founded</dt><dd>GroNorth, VantageOS</dd></div>
       <div><dt>Certificates</dt><dd data-k="certcount">133 listed</dd></div>
       <div><dt>Media training</dt><dd>VFS diploma, 2015</dd></div>
+      <div><dt>Availability</dt><dd data-k="avail">Immediate</dd></div>
     </dl>
   </div>
 
-<div class="tabpanel" id="work" role="tabpanel" aria-labelledby="t-work">
+
   <section class="vband" aria-labelledby="vos-h">
     <div class="vhead">
       <span class="vmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span></span>
@@ -344,6 +258,21 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
     </div>
     <p class="src">Figures from the VantageOS Strategic Thesis, citing Government of Canada and Statistics Canada sources.</p>
   </section>
+
+  <!-- FIT -->
+  <section id="fit">
+    <div class="sec-head">
+      <div><p class="eyebrow">Posting requirements</p><h2>Qualification fit</h2></div>
+      <div class="filters" role="group" aria-label="Filter requirements">
+        <button class="btn" data-f="all" aria-pressed="true">All</button>
+        <button class="btn" data-f="req" aria-pressed="false">Required</button>
+        <button class="btn" data-f="asset" aria-pressed="false">Assets</button>
+      </div>
+    </div>
+    <div class="fit" id="fitList"></div>
+  </section>
+
+  <!-- TIMELINE -->
   <section id="timeline">
     <div class="sec-head">
       <div><p class="eyebrow">2004 – 2026 · select a bar</p><h2>Delivery timeline</h2></div>
@@ -360,6 +289,35 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
     </div>
     <div class="detail" id="detail" aria-live="polite"></div>
   </section>
+
+  <!-- COURSE -->
+  <section id="course">
+    <div class="sec-head">
+      <div><p class="eyebrow">Working draft for the Course Developer</p><h2>“Project Management” course framework</h2></div>
+      <p>A starting framework I'd bring to the first meeting. It follows the PMI process groups and PMBOK® Guide principles. Every module pairs one video with an assessment modelled on a real PM task.</p>
+    </div>
+    <div class="course">
+      <div class="mods" role="tablist" id="mods" aria-label="Course modules"></div>
+      <div class="modpanel" role="tabpanel" id="modpanel"></div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="sec-head">
+      <div><p class="eyebrow">Responsibilities → how I'd deliver them</p><h2>Working with your team</h2></div>
+    </div>
+    <div class="work">
+      <div><h3>Course framework</h3><p>Draft module outcomes and sequencing with the Course Developer, then revise them against your Development and Design Framework.</p></div>
+      <div><h3>Video &amp; audio</h3><p>Record, mix and edit narration and on-location segments myself using my Vancouver Film School training, so your team receives clean, finished audio.</p></div>
+      <div><h3>Branded content</h3><p>Source readings and build slide decks inside the Robertson Branded Style Guidelines, with citations and accessibility checks done before hand-off.</p></div>
+      <div><h3>Authentic assessments</h3><p>Base each assessment on a real PM artifact, such as a charter, WBS, risk register, EVM status report or lessons-learned log, and pair it with a clear rubric.</p></div>
+      <div><h3>Technical questions</h3><p>Answer questions from the Course Developer and Instructional Designer within one business day, with examples from real projects.</p></div>
+      <div><h3>Tracking &amp; meetings</h3><p>Update the project tracking sheet as each deliverable moves, flag risks to the timeline early, and attend project meetings remotely as needed.</p></div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
   <section id="certs">
     <div class="sec-head">
       <div><p class="eyebrow">Continuing education · 2020 – 2024</p><h2>Certificates</h2></div>
@@ -376,6 +334,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
     </table></div>
     <p class="cempty" id="cempty" hidden>No certificates match that search.</p>
   </section>
+
   <section id="credentials">
     <div class="sec-head"><div><p class="eyebrow">Education, certification, tools</p><h2>Credentials</h2></div></div>
     <div class="cols">
@@ -399,162 +358,6 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
       </div>
     </div>
   </section>
-</div>
-
-<div class="tabpanel" id="research" role="tabpanel" aria-labelledby="t-research">
-  <section id="research-intro" class="rintro">
-    <p class="eyebrow">Independent research · Dec 2019 – present</p>
-    <h2>Is idiopathic pulmonary fibrosis a <span>“stuck switch”</span> in the nervous system?</h2>
-    <p class="lede">Idiopathic pulmonary fibrosis (IPF) scars the lungs for no known reason. The standard model blames repeated small injuries to the lung itself. My hypothesis is that the lung is taking orders: that a chronic stress response in the brain and autonomic nervous system keeps sending a “repair” signal long after any injury is gone, and the lung keeps laying down scar tissue in reply.</p>
-    <p class="note">Independent hypothesis work, built by synthesizing published studies in endocrinology, neuroscience and stress research. It has not been peer reviewed and it is not medical advice.</p>
-  </section>
-
-  <section id="pathway">
-    <div class="sec-head">
-      <div><p class="eyebrow">Select a step</p><h2>The proposed pathway</h2></div>
-      <p>Each step links a published finding to the next. Select one to see the evidence behind it.</p>
-    </div>
-    <div class="pw">
-      <ol class="pw-chain" id="pwChain" role="tablist" aria-label="Pathway steps"></ol>
-      <div class="pw-side" id="pwSide"></div>
-      <div class="pw-card" id="pwCard" role="tabpanel" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <section id="papers">
-    <div class="sec-head">
-      <div><p class="eyebrow">Writing</p><h2>Papers</h2></div>
-      <p>Four pieces developing the same idea from different angles.</p>
-    </div>
-    <div class="papers">
-      <article class="paper">
-        <p class="eyebrow">Hypothesis paper · with references</p>
-        <h3>Idiopathic Pulmonary Fibrosis as a Neurologically Driven “Stuck” Repair Response</h3>
-        <p>The full argument: endocrine clues outside the lung, the brain’s control of wound healing, evidence from PTSD and stress-induced heart fibrosis, and the glial “stuck signal” mechanism.</p>
-        <details>
-          <summary>Read the full paper</summary>
-          <div class="fulltext">
-            <h4>Introduction</h4>
-            <p>Idiopathic Pulmonary Fibrosis (IPF) is a progressive lung disease of unknown cause, characterized by relentless scarring (fibrosis) of the lung tissue. Despite extensive research, IPF’s origin remains elusive: patients’ lungs undergo continual scar formation without a clear ongoing injury. Traditional hypotheses focus on repeated microscopic lung injuries and aberrant wound healing. Here I explore an alternate hypothesis: that IPF is fundamentally a neurologically driven disorder, a chronic “stuck” repair response initiated by the brain’s stress and autonomic systems, analogous to a prolonged fight-or-flight or trauma response. In this view, the brain and autonomic nervous system continuously signal the lungs to produce scar tissue, even in the absence of local damage, much like a faulty switch stuck in the “on” position.</p>
-            <h4>Clues beyond the lung: endocrine and systemic links</h4>
-            <p>One clue that IPF may not be solely a lung-localized problem is its association with systemic endocrine changes. Thyroid dysfunction is more common in IPF patients than in the general population. A 2015 study found that thyroid disease is prevalent in IPF patients and predicts their survival (Oldham et al.). Many IPF patients show subclinical or overt hypothyroidism (elevated TSH), and those abnormalities correlated with worse lung function (lower FVC and FEV₁). These observations hint that IPF may involve dysregulation of the body’s hormonal or metabolic state, rather than being a purely local lung issue.</p>
-            <p>There is also experimental evidence that restoring thyroid hormone can directly affect lung fibrosis. In a preclinical study (Yu et al., <i>Nature Medicine</i>, 2018), inhaled active thyroid hormone (T3) significantly reversed established fibrosis and increased survival in mice. The same study found that IPF lungs show increased expression of DIO2, an enzyme that activates thyroid hormone, suggesting the body may be trying to counteract fibrosis by ramping up local hormone activation. That augmenting a systemic hormone can halt or undo lung scarring supports the idea that fibrosis is driven by a systemic signal or imbalance, and implies a brain–thyroid–lung axis: the hypothalamus and pituitary, which regulate the thyroid through TSH, may be part of the loop that governs lung repair.</p>
-            <p>A further observation: replacing the lungs by transplant does not always remove the problem. Full recurrence of IPF in a transplanted lung is considered rare, and is likely damped by post-transplant immunosuppression (Elicker et al., 2010), but reports of fibrotic processes continuing suggest that something in the patient’s internal environment can still drive scarring after the original lungs are gone. The propensity for pathologic scarring may reside in the person, not only in the removed tissue.</p>
-            <h4>The brain’s role in wound healing and stress</h4>
-            <p>The limbic system, including the amygdala, hypothalamus, pituitary and hippocampus, is the command centre for the stress response. Under acute danger it releases hormones and neurotransmitters such as adrenaline and cortisol, and it triggers automatic repair if injury occurs. These responses are involuntary and normally tightly regulated: the hippocampus provides negative feedback that shuts the stress response off once a threat has passed (Herman et al., 2016).</p>
-            <p>Under chronic stress this regulation can fail. Prolonged stress is associated with a smaller hippocampus (Logue et al., 2018) and a weakened ability to switch off the hypothalamic–pituitary–adrenal (HPA) axis. The result, seen in post-traumatic stress disorder, is a body held in persistent fight-or-flight, with chronic release of stress mediators (Elenkov &amp; Chrousos, 2004; Dhabhar, 2014).</p>
-            <p>Those mediators include pro-inflammatory and pro-fibrotic molecules. Prolonged sympathetic activation skews immune signalling toward chronic low-grade inflammation, and chronic stress has been shown to stimulate a pro-fibrotic pathway in lung and heart (Chen et al., 2015). Among the cytokines involved is transforming growth factor beta 1 (TGF-β1), the master regulator of fibrosis, which drives fibroblasts to produce collagen and scar matrix (Fernandez &amp; Eickelberg, 2012). Blocking TGF-β signalling in lung epithelium protects mice from bleomycin-induced fibrosis (Li et al., 2011). Put together: chronic stress → sympathetic overactivity → excess TGF-β1 → unrestrained fibrosis.</p>
-            <h4>Evidence from PTSD and chronic stress on other organs</h4>
-            <p>People with PTSD show elevated inflammatory markers and a higher incidence of heart disease. In a 2020 rat model of PTSD, predator-induced stress alone, with no physical injury to the heart, produced multifocal cardiac lesions with necrosis, immune cell infiltration and collagen deposition, along with markers of fibroblast activation (Rorabaugh et al., 2020). Chronic psychological stress was enough to scar heart tissue.</p>
-            <p>If stress signals can scar a heart, the lungs are a plausible target too: they are richly innervated by vagal and sensory nerves that take part in injury responses (Mazzone &amp; Undem, 2016), and IPF patients show a heightened cough reflex (Hope-Gill et al., 2003). In this hypothesis the limbic and autonomic system is the initiator: after trauma, chronic anxiety or another neurological insult, the brain keeps the lungs in “repair mode”, and lung tissue keeps depositing collagen as if healing an injury that isn’t there. A testable prediction follows: IPF patients should show higher rates of prior severe stress or trauma than matched controls.</p>
-            <h4>Glia, neuroplasticity and the “stuck signal”</h4>
-            <p>Glial cells, especially astrocytes and microglia, maintain neuronal health, clear neurotransmitters such as glutamate, and regulate the blood–brain barrier. Chronic stress changes microglia in stress-responsive brain regions (Tynan et al., 2010). If glial clearance fails, circuits may not shut off properly: a limbic circuit could keep firing a “damage–repair” signal, like a broken thermostat, and some part of the brain would keep telling the lungs “heal, heal, heal” when no healing is needed.</p>
-            <p>The brain is also plastic. Rehabilitation remodels circuits after stroke, exposure therapy rewires fear circuits in PTSD, and psilocybin has been shown to induce rapid, persistent growth of dendritic spines (Shao et al., 2021). Future IPF care could pair anti-fibrotic drugs with approaches that target the brain: stress reduction, neurofeedback, or neuromodulatory treatment, alongside pulmonary rehabilitation.</p>
-            <h4>Conclusion</h4>
-            <p>The hypothesis that IPF is at its core a neurologically driven process, a chronic stress injury expressed in the lung, offers a new perspective on a devastating disease. It rests on evidence that chronic stress and autonomic dysregulation can induce fibrosis elsewhere in the body, and that IPF is linked to systemic dysfunction such as thyroid imbalance. Validating it needs rigorous work: epidemiological studies of trauma in fibrotic disease, biological studies of neural and hormonal activity in IPF patients, and trials of stress-targeted interventions. If it holds, “idiopathic” diseases like IPF could come to be understood as neuro-immune maladaptations, and that would give patients something long missing: new ways to treat the cause.</p>
-            <h4>References</h4>
-            <ol class="refs">
-              <li>Oldham JM, Kumar D, Lee C, et al. Thyroid disease is prevalent and predicts survival in patients with idiopathic pulmonary fibrosis. <i>Chest</i>. 2015;148(3):692–700.</li>
-              <li>Yu G, Tzouvelekis A, Wang R, et al. Thyroid hormone inhibits lung fibrosis in mice by improving epithelial mitochondrial function. <i>Nat Med</i>. 2018;24(1):39–49.</li>
-              <li>Elicker BM, Golden JA, Ordovas KG, et al. Progression of native lung fibrosis in lung transplant recipients with idiopathic pulmonary fibrosis. <i>Respir Med</i>. 2010;104(3):426–433.</li>
-              <li>Herman JP, McKlveen JM, Ghosal S, et al. Regulation of the hypothalamic-pituitary-adrenocortical stress response. <i>Compr Physiol</i>. 2016;6(2):603–621.</li>
-              <li>Logue MW, van Rooij SJ, Dennis EL, et al. Smaller hippocampal volume in posttraumatic stress disorder: a multisite ENIGMA-PGC study. <i>Biol Psychiatry</i>. 2018;83(3):244–253.</li>
-              <li>Elenkov IJ, Chrousos GP. Stress system activation and immunity: implications for inflammation, autoimmune diseases, and health. <i>Ann N Y Acad Sci</i>. 2004;1024:1–12.</li>
-              <li>Dhabhar FS. Effects of stress on immune function: the good, the bad, and the beautiful. <i>Immunol Res</i>. 2014;58(2-3):193–210.</li>
-              <li>Chen WS, Zhang C, Pang J, et al. Chronic stress stimulates a pro-fibrotic pathway in lung and heart. <i>Sci Rep</i>. 2015;5:16691.</li>
-              <li>Fernandez IE, Eickelberg O. The impact of TGF-β on lung fibrosis: from targeting to biomarkers. <i>Proc Am Thorac Soc</i>. 2012;9(3):111–116.</li>
-              <li>Li M, Krishnaveni MS, Li C, et al. Epithelium-specific deletion of TGF-β receptor type II protects mice from bleomycin-induced pulmonary fibrosis. <i>J Clin Invest</i>. 2011;121(1):277–287.</li>
-              <li>Rorabaugh BR, Mabe NW, Seeley SL, et al. Myocardial fibrosis, inflammation, and altered cardiac gene expression profiles in rats exposed to a predator-based model of posttraumatic stress disorder. <i>Stress</i>. 2020;23(2):125–135.</li>
-              <li>Mazzone SB, Undem BJ. Vagal afferent innervation of the airways in health and disease. <i>Physiol Rev</i>. 2016;96(3):975–1024.</li>
-              <li>Hope-Gill BD, Hilldrup S, Davies C, et al. A study of the cough reflex in idiopathic pulmonary fibrosis. <i>Am J Respir Crit Care Med</i>. 2003;168(8):995–1002.</li>
-              <li>Tynan RJ, Naicker S, Hinwood M, et al. Chronic stress alters the density and morphology of microglia in a subset of stress-responsive brain regions. <i>Brain Behav Immun</i>. 2010;24(7):1058–1068.</li>
-              <li>Shao LX, Liao C, Gregg I, et al. Psilocybin induces rapid and persistent growth of dendritic spines in frontal cortex in vivo. <i>Neuron</i>. 2021;109(16):2535–2544.</li>
-            </ol>
-          </div>
-        </details>
-      </article>
-      <article class="paper">
-        <p class="eyebrow">Strategy paper · 2026</p>
-        <h3>The Brain–Thyroid–Lung Axis: A Strategic Paradigm Shift in Treating IPF</h3>
-        <p>Makes the case for moving clinical trials from lung-only anti-fibrotic drugs toward the hormonal and nervous-system axes that govern repair, starting with thyroid status as a predictor of survival.</p>
-      </article>
-      <article class="paper">
-        <p class="eyebrow">Research framework · 2026</p>
-        <h3>Investigating the Neuro-Endocrine Drivers of Pulmonary Fibrosis</h3>
-        <p>A trial design to test the hypothesis: trauma scoring, hippocampal volume imaging, TSH/T3 and TGF-β1 monitoring, and a correlation between heart rate variability and yearly lung-function decline.</p>
-      </article>
-      <article class="paper">
-        <p class="eyebrow">Plain-language overview · 2026</p>
-        <h3>The “Stuck” Switch: Understanding IPF as a Neurological Stress Response</h3>
-        <p>The idea without the jargon, written for patients, families and anyone new to the disease.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="agenda">
-    <div class="sec-head">
-      <div><p class="eyebrow">How to test it</p><h2>Proposed research agenda</h2></div>
-    </div>
-    <div class="agenda">
-      <div><h3>Trauma history</h3><p>Measure prior severe stress and trauma in IPF patients with validated scales such as ACE scores, against matched controls.</p></div>
-      <div><h3>Brain markers</h3><p>Image hippocampal volume and track HPA-axis activity and glutamate regulation over time.</p></div>
-      <div><h3>Hormones &amp; cytokines</h3><p>Screen TSH and T3 as a baseline for the thyroid–lung axis, and measure circulating TGF-β1 serially.</p></div>
-      <div><h3>Nervous system vs. lungs</h3><p>Correlate heart rate variability, a proxy for autonomic tone, with each patient’s yearly decline in forced vital capacity.</p></div>
-    </div>
-  </section>
-
-  <section id="recognition">
-    <div class="sec-head"><div><p class="eyebrow">Recognition</p><h2>Fellowships &amp; panels</h2></div></div>
-    <div class="cols">
-      <div class="item"><span class="yr">2023–</span><div><h3>Fellow, International Sustainable Development Resource Centre</h3><p>Next Generation Leaders Program, Geneva. Systems innovation for sustainable development and global health; policy forums and climate–health dialogues.</p></div></div>
-      <div class="item"><span class="yr">2023</span><div><h3>Expert panelist, Nobel Prize Summit</h3><p>Washington, DC (virtual and in person). Discussions on scientific integrity, cooperation and health innovation.</p></div></div>
-    </div>
-  </section>
-
-</div>
-
-<div class="tabpanel" id="music" role="tabpanel" aria-labelledby="t-music">
-  <section id="music-intro" class="rintro">
-    <p class="eyebrow">Sound · music · audio engineering</p>
-    <h2>Before the job sites, and alongside them: <span>sound</span>.</h2>
-    <p class="lede">I trained in sound design at Vancouver Film School and graduated top of my class. Since then I’ve recorded and mixed live and in the studio, mixed for clients, and worked with musicians, DJs, sound designers and production companies across Western Canada.</p>
-  </section>
-
-  <section id="listen" hidden>
-    <div class="sec-head"><div><p class="eyebrow">Listen</p><h2>Tracks &amp; mixes</h2></div></div>
-    <div class="tracks" id="tracks"></div>
-  </section>
-
-  <section id="craft">
-    <div class="sec-head">
-      <div><p class="eyebrow">Select a stage</p><h2>From the room to the release</h2></div>
-      <p>How I work on a record, from capture to master. Select a stage to see what happens there.</p>
-    </div>
-    <div class="chain" id="chain" role="tablist" aria-label="Production stages"></div>
-    <div class="chain-card" id="chainCard" role="tabpanel" aria-live="polite"></div>
-    <canvas id="wave" class="wave" height="120" aria-hidden="true"></canvas>
-  </section>
-
-  <section id="music-cred">
-    <div class="sec-head"><div><p class="eyebrow">Training &amp; work</p><h2>Credits</h2></div></div>
-    <div class="cols">
-      <div class="list">
-        <div class="item"><span class="yr">2015</span><div><h3>Diploma, Sound Design for Visual Media</h3><p>Vancouver Film School. A four-year program condensed into one. Graduated top of class: field recording, post-production audio, mixing, and syncing sound to picture.</p></div></div>
-        <div class="item"><span class="yr">Ongoing</span><div><h3>Live &amp; production sound</h3><p>Live sound mixing and recording, audio engineering, and mix work for independent clients.</p></div></div>
-        <div class="item"><span class="yr">2017–20</span><div><h3>Field media</h3><p>Camera and GoPro capture, field audio and editing for a Vancouver Island tree-service company’s documentation and promotion.</p></div></div>
-      </div>
-      <div class="list">
-        <div><p class="eyebrow" style="margin-bottom:8px">Worked with</p>
-          <div class="tags"><span>Musicians</span><span>DJs &amp; hosts</span><span>Sound designers</span><span>Production &amp; sound companies</span><span>Stage crews</span><span>Music retailers</span></div></div>
-        <div><p class="eyebrow" style="margin-bottom:8px">Skills</p>
-          <div class="tags"><span>Recording</span><span>Mixing</span><span>Audio engineering</span><span>Sound design</span><span>Field recording</span><span>Post-production</span><span>Sync to picture</span></div></div>
-        <div><p class="eyebrow" style="margin-bottom:8px">Work with me</p>
-          <p style="color:var(--muted);font-size:.95rem">Mixing, recording and sound design: <span class="mono" style="color:var(--ink)">sdrmaster@outlook.com</span></p></div>
-      </div>
-    </div>
-  </section>
-
-</div>
 
   <footer>
     <span class="vmark" style="font-size:.85rem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h5.2L12 14.2 16.8 3H22l-8 18h-4z" fill="#FFB020"/><path d="M9.3 3h3.4L12 4.7z" fill="#FFB020" opacity=".55"/></svg><span>Vantage<b>OS</b></span>&nbsp;·&nbsp;<span style="font-weight:500;color:var(--muted)">The Operating System for the Physical Economy</span></span>
@@ -565,6 +368,26 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
 <script>
 (function(){
   const $=s=>document.querySelector(s);
+
+  /* ---------- Fit matrix ---------- */
+  const FIT=[
+    {t:"req",q:"PMP or CAPM certification",s:"gap",l:"Gap",e:"<b>I don't hold a PMP or CAPM.</b> I have <b>30.25 PMI PDUs / contact hours</b> from 27 courses by a PMI® Registered Education Provider (#4101), which is more than the 23 hours of project management education the CAPM requires. That includes Project Management Foundations and its Schedules, Budgets, Requirements and Ethics courses. I have also completed Coursera's Foundations of Project Management, Project Initiation and Project Planning, and I bring 20+ years of delivering projects in the field."},
+    {t:"req",q:"Strong understanding of Project Management and PMBOK",s:"good",l:"Evidence",e:"<b>VantageOS</b> models the PM lifecycle as software: charters and missions, task states (todo → in progress → review → blocked → done), risk registers, stage-gate approvals, and a retrospective and lessons-learned module. Formal coursework: 30.25 PMI PDUs, including Project Management Foundations with its Schedules, Budgets, Requirements and Ethics courses; Coursera's Foundations of Project Management, Project Initiation and Project Planning, and LinkedIn Learning's Project Management Foundations, Business Benefits Realization and Agile Requirements Foundations. The course framework below is organized by PMI process group."},
+    {t:"req",q:"Knowledge of and experience with managing projects",s:"strong",l:"Strong",e:"<b>20+ years</b> delivering projects on site: custom homes on Vancouver Island, a large retirement-community build in Vernon, Western Canada relocations as <b>Moving Foreman</b> (2008–2012), and 4–5 tree-removal projects a month as <b>Ground Lead</b>. Founder of GroNorth (2019–present)."},
+    {t:"asset",q:"Facilitating workshops or training on PM",s:"good",l:"Evidence",e:"Designed a <b>Supervisor-Trainer model</b> with a standardized training curriculum and SOPs for a scaling field-services business. Ran tailgate safety meetings and trained crew members on site. Completed <b>Virtual Training for Sales Trainers and Coaches</b>, and PowerPoint Essential Training for building course decks."},
+    {t:"asset",q:"Using AI to manage projects",s:"strong",l:"Strong",e:"Designed <b>VantageOS</b>, an AI-native project operating system. AI agents triage risk, draft mitigation plans and flag schedule drift. Every critical action goes through deterministic gates and human approval, with an append-only audit log. I can teach both what AI does well in project work and where it needs guardrails. Coursework includes LinkedIn Learning's <b>Big Data in the Age of AI</b> and the 23-hour <b>Become a Data Scientist</b> path."},
+    {t:"asset",q:"Developing training programs or courses",s:"good",l:"Evidence",e:"Wrote a <b>three-level training curriculum</b> (Technician → Lead Technician/Trainer → Operations Supervisor) so business knowledge lives in documented processes. The draft course framework on this page is a working sample."},
+    {t:"req",q:"Analytical and critical thinking",s:"strong",l:"Strong",e:"Wrote long-form strategy and feasibility analyses: the VantageOS strategic thesis on Canadian infrastructure procurement, and a VK Accelerate business plan with SWOT, market research and financial projections."},
+    {t:"req",q:"Written and verbal communication",s:"strong",l:"Strong",e:"Wrote investor memos, stakeholder briefs and technical references. Handled client communication on every job site. Produced narration and audio post-production as a trained sound designer."},
+    {t:"req",q:"Time management, prioritization and deadlines",s:"strong",l:"Strong",e:"Remote forestry work on 4:00 AM to 7:00 PM days in unpredictable coastal conditions, and 10+ hour rig shifts. Home builds delivered on schedule and on budget."},
+    {t:"req",q:"Collaborative team player",s:"strong",l:"Strong",e:"Worked in two-person falling crews, on rig crews, and as lead coordinator for multi-trade subcontractors. At VantageOS I worked across product, finance and compliance."},
+  ];
+  const fitList=$("#fitList");
+  fitList.innerHTML=FIT.map((f,i)=>`<details data-t="${f.t}"${i===4?" open":""}><summary><span class="kind">${f.t==="req"?"Required":"Asset"}</span><span class="q">${f.q}</span><span class="chip ${f.s}">${f.l}</span></summary><p class="ev">${f.e}</p></details>`).join("");
+  document.querySelectorAll("[data-f]").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll("[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    fitList.querySelectorAll("details").forEach(d=>d.hidden=!(b.dataset.f==="all"||d.dataset.t===b.dataset.f));
+  }));
 
   /* ---------- Gantt ---------- */
   const Y0=2004,Y1=2027;
@@ -659,6 +482,40 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
   g.addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(b)show(b.dataset.id)});
   show("vantage");
 
+  /* ---------- Course framework ---------- */
+  const MODS=[
+    {t:"Foundations of project work",pg:"Context",o:["Define projects, programs and operations","Compare predictive, agile and hybrid life cycles","Explain the PM role and PMBOK® principles"],v:"On a job site: the same build run three ways. Why the life cycle choice matters.",a:"Choose a life cycle for a given scenario and justify it in a one-page memo.",ai:"Where AI assistants fit across the life cycle, and where they don't."},
+    {t:"Initiating & stakeholders",pg:"Initiating",o:["Write a project charter","Build a stakeholder register and power/interest grid","Set success criteria"],v:"Walking a real client brief through to a signed charter.",a:"Draft a charter and stakeholder register for a community renovation case.",ai:"Using AI to draft a charter, then checking the draft critically."},
+    {t:"Scope & the WBS",pg:"Planning",o:["Gather and trace requirements","Decompose scope into a WBS","Write a WBS dictionary entry"],v:"Breaking a house frame into work packages, on location.",a:"Build a WBS to level 3 with dictionary entries for three work packages.",ai:"Prompting for a WBS and spotting what the model misses."},
+    {t:"Schedule",pg:"Planning",o:["Sequence activities and dependencies","Find the critical path","Read and build a Gantt chart"],v:"Critical path on a whiteboard, then the same schedule in software.",a:"Build a network diagram and Gantt chart, and identify the critical path and float.",ai:"How AI schedule-risk tools flag drift."},
+    {t:"Cost & earned value",pg:"Planning / M&C",o:["Estimate and build a cost baseline","Calculate PV, EV, AC, CPI and SPI","Forecast EAC"],v:"Why the project is 'on budget' but still in trouble: EVM in ten minutes.",a:"Write an EVM status report from a mid-project data set.",ai:"Automated variance alerts and when to override them."},
+    {t:"Risk & uncertainty",pg:"Planning / M&C",o:["Identify, analyze and rank risks","Plan responses","Maintain a live risk register"],v:"Hazard assessment before a tree fall: risk planning where mistakes are costly.",a:"Build a risk register with a probability/impact matrix and response owners.",ai:"AI risk triage with human sign-off on high-severity items."},
+    {t:"Executing, team & quality",pg:"Executing",o:["Lead and develop a team","Manage communications","Apply quality assurance and control"],v:"Tailgate meetings, handoffs and running a crew day to day.",a:"Write a communications plan and a weekly status update for a sponsor.",ai:"Meeting summaries and action tracking with AI."},
+    {t:"Change, closing & lessons learned",pg:"M&C / Closing",o:["Run integrated change control","Close out a project formally","Capture lessons learned"],v:"A change order from request to approval, and what the retrospective found.",a:"Assess a change request and write a close-out report with a lessons-learned log.",ai:"Building a lessons-learned knowledge base the next project can use."}
+  ];
+  const mods=$("#mods"),panel=$("#modpanel");
+  mods.innerHTML=MODS.map((m,i)=>`<button role="tab" id="mt${i}" aria-controls="modpanel" aria-selected="${i===0}" data-i="${i}"><span class="n mono">M${String(i+1).padStart(2,"0")}</span><span>${m.t}</span><span class="pg">${m.pg}</span></button>`).join("");
+  function mod(i){
+    const m=MODS[i];
+    mods.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.i==i));
+    panel.setAttribute("aria-labelledby","mt"+i);
+    panel.innerHTML=`<div><p class="eyebrow">Module ${i+1} of ${MODS.length} · ${m.pg}</p><h3>${m.t}</h3></div>
+      <div class="mgrid">
+        <div><h4>Learning outcomes</h4><ul>${m.o.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+        <div><h4>Video segment</h4><p>${m.v}</p></div>
+        <div><h4>Authentic assessment</h4><p>${m.a}</p></div>
+        <div><h4>AI in practice</h4><p>${m.ai}</p></div>
+      </div>
+      <p class="draws"><b>Deliverables:</b> 1 recorded video (narration mixed in-house) · slide deck to Robertson brand · curated readings · assessment brief + rubric</p>`;
+  }
+  mods.addEventListener("click",e=>{const b=e.target.closest("button");if(b)mod(+b.dataset.i)});
+  mods.addEventListener("keydown",e=>{
+    const cur=+document.activeElement.dataset.i;if(isNaN(cur))return;
+    let n=null;if(e.key==="ArrowDown"||e.key==="ArrowRight")n=(cur+1)%MODS.length;if(e.key==="ArrowUp"||e.key==="ArrowLeft")n=(cur-1+MODS.length)%MODS.length;
+    if(n!==null){e.preventDefault();mod(n);$("#mt"+n).focus()}
+  });
+  mod(0);
+
   /* ---------- Certificates ---------- */
   const CERTS=[["Strategic Planning Foundations", "2024-10", "P", "Project management", "Module 1: aligning projects to strategy", null, null, 1.25], ["Leading with Vision", "2024-10", "P", "Leadership & training", "", null, null, 1.25], ["Executive Leadership", "2024-09", "P", "Leadership & training", "", null, null, 1.0], ["Building Trust", "2024-09", "L", "Leadership & training", "", null, null, 0], ["Empathy for Sales Professionals", "2024-02", "L", "Sales", "", null, null, 0], ["Controlling the Sale", "2024-02", "L", "Sales", "", null, null, 0], ["Persuasive Selling", "2024-02", "P", "Sales", "", null, null, 1.0], ["Communicating with Confidence", "2024-02", "L", "Leadership & training", "", null, null, 0], ["Communicating Nonverbally", "2024-02", "L", "Leadership & training", "", null, null, 0], ["Virtual Training for Sales Trainers and Coaches", "2024-01", "L", "Leadership & training", "Recorded video delivery and virtual facilitation", null, null, 0], ["Transitioning to Management for Salespeople", "2024-01", "L", "Sales", "", null, null, 0], ["The Science of Sales", "2024-01", "L", "Sales", "", null, null, 0], ["The Persuasion Code, Part 1: The Neuroscience of Sales", "2024-01", "L", "Sales", "", null, null, 0], ["Solution Sales", "2024-01", "L", "Sales", "", null, null, 0], ["Sales Performance Measurement and Reporting", "2024-01", "L", "Sales", "", null, null, 0], ["Sales Management Foundations", "2024-01", "L", "Sales", "", null, null, 0], ["Sales Leadership: Building a Thriving Coaching Culture", "2024-01", "L", "Sales", "", null, null, 0], ["How to Motivate Your Sales Teams", "2024-01", "L", "Sales", "", null, null, 0], ["Growing as a Sales Manager", "2024-01", "L", "Sales", "", null, null, 0], ["Explore a Career as a Sales Manager", "2024-01", "L", "Sales", "", null, null, 0], ["Python: Design Patterns", "2023-12", "L", "Programming", "", null, null, 0], ["Python Practice: Real-World Coding Challenges", "2023-12", "L", "Programming", "", null, null, 0], ["Python GUI Development with Tkinter", "2023-12", "L", "Programming", "", null, null, 0], ["Python Essential Training", "2023-12", "L", "Programming", "", null, null, 0], ["Python Data Structures and Algorithms", "2023-12", "L", "Programming", "", null, null, 0], ["Python Automation and Testing", "2023-12", "L", "Programming", "", null, null, 0], ["Programming Foundations: Data Structures", "2023-12", "L", "Programming", "", null, null, 0], ["Level Up: Python", "2023-12", "L", "Programming", "", null, null, 0], ["Learning the Python 3 Standard Library", "2023-12", "L", "Programming", "", null, null, 0], ["Hands-On Introduction: Python", "2023-12", "L", "Programming", "", null, null, 0], ["Getting Started with Python", "2023-12", "L", "Programming", "", null, null, 0], ["Learning Excel: Data Analysis", "2023-11", "L", "Data & AI", "", null, null, 0], ["SQL: Data Reporting and Analysis", "2023-11", "L", "Data & AI", "", null, null, 0], ["Lessons from Data Scientists", "2023-11", "L", "Data & AI", "", null, null, 0], ["The Non-Technical Skills of Effective Data Scientists", "2023-11", "L", "Data & AI", "", null, null, 0], ["Tableau Essential Training", "2023-11", "L", "Data & AI", "", null, null, 0], ["Statistics Foundations 2: Probability", "2023-11", "L", "Data & AI", "", null, null, 0], ["Statistics Foundations 1: The Basics", "2023-11", "L", "Data & AI", "", null, null, 0], ["Starting Your Career as a Financial Analyst", "2023-11", "L", "Finance", "", null, null, 0], ["Side Hustle Strategies for Data Science and Analytics Experts", "2023-11", "L", "Data & AI", "", null, null, 0], ["Reinforcement Learning Foundations", "2023-11", "L", "Data & AI", "", null, null, 0], ["R Essential Training: Wrangling and Visualizing Data", "2023-11", "L", "Data & AI", "", null, null, 0], ["Power BI Essential Training", "2023-11", "L", "Data & AI", "", null, null, 0], ["Master Key Financial Analyst Skills", "2023-11", "L", "Finance", "", null, null, 0], ["Machine Learning Foundations: Linear Algebra", "2023-11", "L", "Data & AI", "", null, null, 0], ["Learning SQL Programming", "2023-11", "L", "Programming", "", null, null, 0], ["Learning Python", "2023-11", "L", "Programming", "", null, null, 0], ["Learning Java 11", "2023-11", "L", "Programming", "", null, null, 0], ["Learning Data Visualization", "2023-11", "L", "Data & AI", "", null, null, 0], ["Learning Data Governance", "2023-11", "L", "Data & AI", "", null, null, 0], ["Learning Data Analytics: 1 Foundations", "2023-11", "L", "Data & AI", "", null, null, 0], ["Learning Data Analytics Part 2: Extending and Applying Core Knowledge", "2023-11", "L", "Data & AI", "", null, null, 0], ["Learning C#", "2023-11", "L", "Programming", "", null, null, 0], ["JavaScript Essential Training", "2023-11", "L", "Programming", "", null, null, 0], ["Hands-On PyTorch Machine Learning", "2023-11", "L", "Data & AI", "", null, null, 0], ["Getting Started with AI and Machine Learning", "2023-11", "L", "Data & AI", "AI-in-practice segments across modules", null, null, 0], ["Financial Modeling and Forecasting Financial Statements", "2023-11", "L", "Finance", "", null, null, 0], ["Financial Modeling Foundations", "2023-11", "L", "Finance", "Module 5: budgets and cost baselines", null, null, 0], ["Excel Statistics Essential", "2023-11", "L", "Data & AI", "", null, null, 0], ["Ethical Hacking: Social Engineering", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Vulnerability Analysis", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: The Complete Malware Analysis Process", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: System Hacking", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Sniffers", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Session Hijacking", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Scanning Networks", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: SQL Injection", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Introduction to Ethical Hacking", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Hacking Web Servers and Web Applications", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Hacking IoT Devices", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Footprinting and Reconnaissance (2016)", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Evading IDS, Firewalls, and Honeypots", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Enumeration", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Denial of Service", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Cryptography", "2023-11", "L", "Security", "", null, null, 0], ["Ethical Hacking: Cloud Computing", "2023-11", "L", "Security", "", null, null, 0], ["Deep Learning: Getting Started", "2023-11", "L", "Data & AI", "", null, null, 0], ["Data, Economic Modeling, and Forecasting with Stata", "2023-11", "L", "Finance", "Module 5: cost forecasting", "3a58165675d9…", "1.8 CPE", 0], ["Data Visualization: Storytelling", "2023-11", "L", "Leadership & training", "Status reports, dashboards and course slides", "736123ad131e…", "3.0 CPE", 0], ["Data Science and Analytics Career Paths and Certifications: First Steps", "2023-11", "L", "Data & AI", "", null, null, 0], ["Data Fluency: Exploring and Describing Data", "2023-11", "L", "Data & AI", "", null, null, 0], ["Data Cleaning in Python Essential Training", "2023-11", "L", "Data & AI", "", null, null, 0], ["Corporate Financial Statement Analysis", "2023-11", "L", "Finance", "", null, null, 0], ["Building Computer Vision Applications with Python", "2023-11", "L", "Data & AI", "", null, null, 0], ["Big Data in the Age of AI", "2023-11", "L", "Data & AI", "AI-in-practice segments across modules", "13662bb181fd…", "3.4 CPE", 0], ["Become an Ethical Hacker", "2023-11", "L", "Security", "Security risks when projects adopt AI tools", "ba5b0221ebbb…", "Learning Path · 32 h 56 m", 0], ["Become a Software Developer", "2023-11", "L", "Programming", "", null, null, 0], ["Become a Data Scientist", "2023-11", "L", "Data & AI", "Data-driven project decisions", "38947d30ea98…", "Learning Path · 23 h", 0], ["Become a Data Analyst", "2023-11", "L", "Data & AI", "", null, null, 0], ["Artificial Intelligence Foundations: Thinking Machines", "2023-11", "L", "Data & AI", "", null, null, 0], ["Artificial Intelligence Foundations: Neural Networks", "2023-11", "L", "Data & AI", "", null, null, 0], ["A Day In The Life of a Data Scientist", "2023-11", "L", "Data & AI", "", null, null, 0], ["Business Benefits Realization Foundations", "2023-10", "P", "Project management", "Module 8: benefits tracking at close-out", null, null, 1.0], ["Agile Requirements Foundations", "2023-10", "P", "Business analysis", "Module 1: agile and hybrid life cycles", null, null, 1.5], ["Business Analyst and Project Manager Collaboration", "2023-10", "P", "Project management", "Module 3: requirements and scope", null, null, 1.0], ["Business Analysis Foundations: Business Process Modeling", "2023-10", "P", "Business analysis", "", null, null, 1.25], ["Business Analysis Foundations", "2020-12", "P", "Business analysis", "", null, null, 1.25], ["What Is Business Analysis?", "2023-10", "P", "Business analysis", "", null, null, 0.25], ["Succeeding in Web Development: Full Stack and Front End", "2023-10", "L", "Programming", "", null, null, 0], ["Requirements Elicitation for Business Analysts: Interviews", "2023-10", "L", "Business analysis", "", null, null, 0], ["Requirements Elicitation and Analysis", "2023-10", "P", "Business analysis", "Module 3: requirements gathering", null, null, 1.25], ["Project Management Skills for Leaders", "2023-10", "P", "Project management", "Module 7: leading project teams", null, null, 0.5], ["Project Management Foundations", "2023-10", "P", "Project management", "Framework check against PMI terminology", null, null, 3.25], ["Programming Foundations: Fundamentals", "2023-10", "L", "Programming", "", null, null, 0], ["Programming Foundations: Databases", "2023-10", "L", "Programming", "", null, null, 0], ["PowerPoint Essential Training (Microsoft 365)", "2023-10", "L", "Leadership & training", "Branded slide decks for each module", null, null, 0], ["Negotiation Foundations", "2023-10", "P", "Leadership & training", "", null, null, 1.0], ["Measuring Team Performance", "2023-10", "P", "Leadership & training", "Module 7: team performance metrics", null, null, 1.25], ["Leadership Foundations", "2023-10", "P", "Leadership & training", "", null, null, 1.75], ["Interpersonal Communication", "2023-10", "L", "Leadership & training", "", null, null, 0], ["HTML Essential Training", "2023-10", "L", "Programming", "", null, null, 0], ["Getting Started as a Business Analyst", "2023-10", "L", "Business analysis", "", null, null, 0], ["Excel Quick Tips", "2023-10", "L", "Data & AI", "", null, null, 0], ["Data Science Foundations: Fundamentals", "2023-10", "L", "Data & AI", "", null, null, 0], ["Communication within Teams", "2023-10", "L", "Leadership & training", "", null, null, 0], ["Communication Foundations", "2023-10", "P", "Leadership & training", "", null, null, 1.25], ["CSS Essential Training", "2023-10", "L", "Programming", "", null, null, 0], ["Business Benefits Realization", "2023-10", "L", "Project management", "Module 8: benefits tracking at close-out", null, null, 0], ["Project Planning: Putting It All Together", "2022-04", "C", "Project management", "Modules 3–6: scope, schedule, budget and risk planning", "UV3MRNTHTHUL", "", 0], ["Foundations of Project Management", "2022-03", "C", "Project management", "Module 1: PM roles, life cycles and methodologies", "AE23ASMP6QA6", "", 0], ["Project Initiation: Starting a Successful Project", "2022-03", "C", "Project management", "Module 2: charters, stakeholders and success criteria", "JGT6P6KJ4XPS", "", 0], ["Learning Asana", "2021-09", "P", "Project management", "Tool demos for task tracking", null, null, 1.5], ["Holding Your Team Accountable", "2020-12", "P", "Leadership & training", "", null, null, 0.75], ["Project Management Foundations: Budgets", "2024-11", "P", "Project management", "Module 5: cost baselines and budgets", null, null, 0.75], ["Project Management Foundations: Schedules", "2024-10", "P", "Project management", "Module 4: schedules and critical path", null, null, 2.0], ["Project Management Foundations: Requirements", "2024-10", "P", "Project management", "Module 3: requirements and scope", null, null, 0.25], ["Project Management Foundations: Ethics", "2024-10", "P", "Project management", "Module 1: PMI Code of Ethics and professional conduct", null, null, 1.0], ["Strategic Thinking", "2024-10", "P", "Leadership & training", "", null, null, 0.5], ["Developing a Competitive Strategy", "2024-10", "P", "Leadership & training", "", null, null, 1.25], ["Igniting Emotional Engagement", "2024-02", "P", "Leadership & training", "", null, null, 0.75], ["Learning to Be Approachable", "2024-02", "P", "Leadership & training", "", null, null, 0.5], ["Develop Your Communication Skills and Interpersonal Influence", "2024-02", "L", "Leadership & training", "Module 7: stakeholder communication", null, "Learning Path · 5 h 23 m", 0], ["Predictive Analytics Essential Training: Data Mining", "2023-11", "L", "Data & AI", "", null, "IIBA · 2.0 CDUs", 0]];
   const ISSN={L:"LinkedIn Learning",C:"Coursera",P:"LinkedIn Learning · PMI® Provider #4101"};
@@ -681,124 +538,6 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);display
   $("#ccats").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;$("#ccats").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderC()});
   $("#cq").addEventListener("input",renderC);
   renderC();
-
-  /* ---------- Tabs ---------- */
-  const TABS=["work","research","music"];
-  function showTab(id,scroll){
-    TABS.forEach(t=>{
-      $("#"+t).hidden=t!==id;
-      $("#t-"+t).setAttribute("aria-selected",t===id);
-    });
-    if(scroll){const top=$("#"+id).getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>top)window.scrollTo(0,top)}
-  }
-  function fromHash(scroll){
-    const h=location.hash.slice(1);
-    if(TABS.includes(h))return showTab(h,scroll);
-    const el=h&&document.getElementById(h);
-    const panel=el&&el.closest(".tabpanel");
-    showTab(panel?panel.id:"work",false);
-    if(el)el.scrollIntoView();
-  }
-  window.addEventListener("hashchange",()=>fromHash(true));
-  fromHash(false);
-
-  /* ---------- Research: pathway ---------- */
-  const STEPS=[
-    {t:"Chronic stress or trauma",s:"The trigger",
-     p:"Long-running stress, trauma or another neurological insult puts the body's survival systems on alert. The hypothesis is that in IPF this alert never fully stands down.",
-     ev:[["Chronic activation of the stress system shifts immune signalling toward persistent inflammation.","Elenkov & Chrousos, Ann N Y Acad Sci, 2004"],
-         ["Stress has short-term benefits for immune defence but long-term costs when it becomes chronic.","Dhabhar, Immunol Res, 2014"]]},
-    {t:"The hippocampal brake fails",s:"Feedback breaks down",
-     p:"The hippocampus normally tells the hypothalamus to shut the stress response off once a threat has passed. Under chronic stress that feedback weakens.",
-     ev:[["People with PTSD have measurably smaller hippocampal volume, in a study pooling many sites.","Logue et al., Biol Psychiatry, 2018"],
-         ["The HPA stress response is governed by negative feedback that limits how long it runs.","Herman et al., Compr Physiol, 2016"]]},
-    {t:"The stress axis stays switched on",s:"HPA and sympathetic overdrive",
-     p:"Without the brake, the hypothalamic–pituitary–adrenal axis and the sympathetic nervous system stay active: the body is held in fight-or-flight.",
-     ev:[["Sustained sympathetic and HPA activity alters cytokine production and immune balance.","Elenkov & Chrousos, 2004; Herman et al., 2016"]]},
-    {t:"TGF-β1 rises",s:"The fibrosis signal",
-     p:"Chronic stress mediators push immune signalling toward TGF-β1, the master regulator of fibrosis, which instructs cells to build scar matrix.",
-     ev:[["Chronic stress stimulates a pro-fibrotic pathway in both lung and heart in animal studies.","Chen et al., Sci Rep, 2015"],
-         ["TGF-β is the central driver of lung fibrosis and a leading therapeutic target.","Fernandez & Eickelberg, Proc Am Thorac Soc, 2012"]]},
-    {t:"Fibroblasts lay down collagen",s:"Repair with no off switch",
-     p:"Fibroblasts turn into collagen-producing myofibroblasts and keep building matrix, as if healing a wound that is no longer there.",
-     ev:[["Removing the TGF-β type II receptor from lung epithelium protects mice from induced lung fibrosis.","Li et al., J Clin Invest, 2011"]]},
-    {t:"The lungs scar",s:"Idiopathic pulmonary fibrosis",
-     p:"The end result is progressive scarring of the lung with no ongoing injury to explain it: the “idiopathic” part of IPF.",
-     ev:[["Stress alone, with no physical injury, produced collagen scarring in the hearts of rats in a PTSD model.","Rorabaugh et al., Stress, 2020"],
-         ["The airways are richly supplied by vagal sensory nerves that take part in injury responses.","Mazzone & Undem, Physiol Rev, 2016"]]}
-  ];
-  const SIDE={t:"The thyroid–lung axis",s:"A systemic modifier",side:true,
-     p:"The brain also controls the thyroid through TSH. Low thyroid function tracks with worse IPF, and restoring thyroid hormone reversed fibrosis in mice, which points to a whole-body signal rather than a lung-only problem.",
-     ev:[["Thyroid disease is common in IPF and predicts survival.","Oldham et al., Chest, 2015"],
-         ["Inhaled thyroid hormone reversed established lung fibrosis in mice by improving mitochondrial function in lung cells.","Yu et al., Nat Med, 2018"]]};
-  const chainEl=$("#pwChain"),sideEl=$("#pwSide"),card=$("#pwCard");
-  if(chainEl){
-    const btn=(x,i,n)=>`<button class="pwbtn" role="tab" id="pw${i}" aria-controls="pwCard" aria-selected="false" data-i="${i}"><span class="n">${n}</span><span><b>${x.t}</b><small>${x.s}</small></span></button>`;
-    chainEl.innerHTML=STEPS.map((x,i)=>`<li>${btn(x,i,i+1)}</li>`).join("");
-    sideEl.innerHTML=`<p class="lab">Acts alongside steps 4–5</p>${btn(SIDE,"s","T")}`;
-    const pick=i=>{
-      const x=i==="s"?SIDE:STEPS[+i];
-      document.querySelectorAll(".pwbtn").forEach(b=>b.setAttribute("aria-selected",b.dataset.i==String(i)));
-      card.className="pw-card"+(x.side?" side":"");
-      card.setAttribute("aria-labelledby","pw"+i);
-      card.innerHTML=`<p class="eyebrow">${x.side?"Modifier":"Step "+(+i+1)+" of "+STEPS.length} · ${x.s}</p><h3>${x.t}</h3><p>${x.p}</p><div class="ev"><p class="eyebrow">Evidence</p>${x.ev.map(e=>`<p>${e[0]}<cite>${e[1]}</cite></p>`).join("")}</div>`;
-    };
-    document.querySelector(".pw").addEventListener("click",e=>{const b=e.target.closest(".pwbtn");if(b)pick(b.dataset.i)});
-    pick(0);
-  }
-
-  /* ---------- Music ---------- */
-  // Add links here to show the "Tracks & mixes" section, e.g.
-  // {t:"Track title",s:"Mix · 2024",u:"https://soundcloud.com/..."}
-  const TRACKS=[];
-  if(TRACKS.length){
-    $("#listen").hidden=false;
-    $("#tracks").innerHTML=TRACKS.map(x=>`<a href="${x.u}" target="_blank" rel="noopener"><b>${x.t}</b><span>${x.s}</span></a>`).join("");
-  }
-  const STAGES=[
-    {t:"Capture",p:"Getting the performance down cleanly: mic choice and placement, gain staging, and room sound, in the studio, on stage or in the field.",k:["Mic placement","Gain staging","Field recording"],w:{amp:.55,noise:.35,comp:0,trim:0}},
-    {t:"Edit",p:"Choosing the best takes, tightening timing, cleaning noise and clicks, and cutting to picture when there is one.",k:["Comping","Timing","Noise repair"],w:{amp:.55,noise:.12,comp:0,trim:.18}},
-    {t:"Mix",p:"Balancing every element so the song or scene reads: levels, EQ, compression, space and movement.",k:["Balance","EQ & dynamics","Space & depth"],w:{amp:.62,noise:.05,comp:.35,trim:.12}},
-    {t:"Master",p:"Final polish for release: consistent loudness, tonal balance across speakers, and delivery formats for each platform.",k:["Loudness","Translation","Formats"],w:{amp:.82,noise:.03,comp:.8,trim:.08}},
-    {t:"Deliver",p:"Stems, final mixes and synced audio, labelled and handed off so the client can release, broadcast or publish with no surprises.",k:["Stems","Sync to picture","Handoff"],w:{amp:.82,noise:.03,comp:.8,trim:.08,marks:true}}
-  ];
-  const chain=$("#chain"),ccard=$("#chainCard"),wave=$("#wave");
-  if(chain){
-    chain.innerHTML=STAGES.map((x,i)=>`${i?'<span class="arrow" aria-hidden="true">→</span>':""}<button role="tab" id="st${i}" aria-controls="chainCard" aria-selected="false" data-i="${i}">${x.t}</button>`).join("");
-    let W=STAGES[0].w,cur={...W},phase=0;
-    const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const ctx=wave.getContext("2d");
-    function draw(){
-      const dpr=window.devicePixelRatio||1,w=wave.clientWidth,h=wave.clientHeight;
-      if(wave.width!==Math.round(w*dpr)){wave.width=Math.round(w*dpr);wave.height=Math.round(h*dpr)}
-      ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
-      for(const k in W)if(typeof W[k]==="number")cur[k]+=(W[k]-cur[k])*.12;
-      const mid=h/2,N=Math.max(80,Math.floor(w/3));
-      ctx.strokeStyle="#1F2A40";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,mid);ctx.lineTo(w,mid);ctx.stroke();
-      ctx.fillStyle="rgba(255,176,32,.9)";
-      for(let i=0;i<N;i++){
-        const x=i/N;
-        if(x<cur.trim*.5||x>1-cur.trim*.5)continue;
-        let env=Math.abs(Math.sin(x*9+phase*.6))*.6+Math.abs(Math.sin(x*23-phase))*.4;
-        env=env*(1-cur.comp)+cur.comp*(.75+.25*env);
-        const n=(Math.sin(i*12.9898+phase*3)*43758.5453%1)*cur.noise;
-        const a=Math.min(1,cur.amp*env+Math.abs(n))*(h*.46);
-        ctx.fillRect(x*w,mid-a,Math.max(1,w/N-1),a*2);
-      }
-      if(W.marks){ctx.fillStyle="#38BDF8";[.25,.5,.75].forEach(m=>ctx.fillRect(m*w,6,2,h-12))}
-      if(!reduce){phase+=.02;requestAnimationFrame(draw)}
-    }
-    const pickStage=i=>{
-      const x=STAGES[i];W=x.w;
-      chain.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.i==i));
-      ccard.setAttribute("aria-labelledby","st"+i);
-      ccard.innerHTML=`<p class="eyebrow">Stage ${i+1} of ${STAGES.length}</p><h3>${x.t}</h3><p>${x.p}</p><div class="tags">${x.k.map(k=>`<span>${k}</span>`).join("")}</div>`;
-      if(reduce){cur={...W};draw()}
-    };
-    chain.addEventListener("click",e=>{const b=e.target.closest("button");if(b)pickStage(+b.dataset.i)});
-    pickStage(0);draw();
-    if(reduce)window.addEventListener("resize",draw);
-  }
 })();
 </script>
 
