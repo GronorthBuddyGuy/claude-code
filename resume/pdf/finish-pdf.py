@@ -55,6 +55,15 @@ for page in doc:
         if GREY in stream:
             doc.update_stream(xref, stream.replace(GREY, NAVY, 1))
 
+# Frame each page: a thin rounded border inset from the edge, with a short amber
+# accent on the top edge, so the content sits inside a defined page.
+INSET = 30  # points (~0.42in)
+for page in doc:
+    r = page.rect
+    frame = pymupdf.Rect(INSET, INSET, r.x1 - INSET, r.y1 - INSET - 12)
+    page.draw_rect(frame, color=(0.149, 0.204, 0.31), width=1, radius=0.025)
+    page.draw_line(pymupdf.Point(frame.x0 + 22, frame.y0), pymupdf.Point(frame.x0 + 110, frame.y0), color=(1, 0.69, 0.125), width=2)
+
 doc.set_toc([[lvl, title, page, {"kind": pymupdf.LINK_GOTO, "page": page - 1, "to": pymupdf.Point(0, max(y - 12, 0))}] for lvl, title, page, y in toc])
 doc.set_metadata({
     "title": "Frank Pepper - Project Management Subject Matter Expert",

@@ -7,7 +7,7 @@ const SRC = path.join(__dirname, "..", "frank-pepper-robertson.html");
 const OUT = path.join(__dirname, "Frank_Pepper_Robertson_Application.pdf");
 
 const PRINT_CSS = `
-@page { size: Letter; margin: 0.55in 0.55in 0.7in; }
+@page { size: Letter; margin: 0.78in 0.78in 0.9in; }
 html, body { background: #070B13 !important; }
 body { padding: 0 !important; font-size: 15px; }
 .bar, .tools, .filters, .ctools, .editnote, #cempty, .mods, #modpanel, #detail, .course { display: none !important; }
@@ -108,7 +108,7 @@ footer { break-inside: avoid; }
     preferCSSPageSize: true,
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
-    footerTemplate: `<div style="width:100%;font:8px 'JetBrains Mono',monospace;color:#93A1BA;padding:0 0.55in;display:flex;justify-content:space-between">
+    footerTemplate: `<div style="width:100%;font:8px 'JetBrains Mono',monospace;color:#93A1BA;padding:0 0.42in;display:flex;justify-content:space-between">
       <span>Frank Pepper · Project Management SME · Robertson College</span>
       <span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   });
