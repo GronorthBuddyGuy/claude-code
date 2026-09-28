@@ -105,3 +105,11 @@ figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-sp
 
 /* The course-module mapping belongs to the Robertson page only. */
 .ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}
+
+/* Academia.edu publications */
+.pubs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.pubs a{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--steel);border-radius:10px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.pubs a:hover{border-color:var(--steel)}
+.pubs b{font:600 1rem/1.3 var(--display)}
+.pubs span{font:.74rem var(--mono);color:var(--steel)}
+@media (max-width:760px){.pubs{grid-template-columns:1fr}}

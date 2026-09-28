@@ -64,6 +64,17 @@
     pick(0);
   }
 
+  /* ---------- Research: papers on Academia.edu ---------- */
+  // Add each paper's title as t once known; links open on Academia.edu.
+  const PUBS=[
+    {id:"175880032",t:""},
+    {id:"165634148",t:""},
+    {id:"165013257",t:""},
+    {id:"164999688",t:""}
+  ];
+  const pubs=$("#pubs");
+  if(pubs)pubs.innerHTML=PUBS.map((x,i)=>`<a href="https://academia.edu/resource/work/${x.id}" target="_blank" rel="noopener"><b>${x.t||"Paper "+(i+1)+" on Academia.edu"}</b><span>Read on Academia.edu ↗</span></a>`).join("");
+
   /* ---------- Music ---------- */
   // Add links here to show the "Tracks & mixes" section, e.g.
   // {t:"Track title",s:"Mix · 2024",u:"https://soundcloud.com/..."}

@@ -312,6 +312,14 @@ figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-sp
 
 /* The course-module mapping belongs to the Robertson page only. */
 .ctable th:nth-child(4),.ctable td:nth-child(4),.cstats div:nth-child(4){display:none}
+
+/* Academia.edu publications */
+.pubs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.pubs a{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--steel);border-radius:10px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.pubs a:hover{border-color:var(--steel)}
+.pubs b{font:600 1rem/1.3 var(--display)}
+.pubs span{font:.74rem var(--mono);color:var(--steel)}
+@media (max-width:760px){.pubs{grid-template-columns:1fr}}
 </style>
 
 <div class="bar">
@@ -454,8 +462,10 @@ figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-sp
 
   <section id="papers">
     <div class="sec-head">
-      <div><p class="eyebrow">Writing</p><h2>Paper</h2></div>
+      <div><p class="eyebrow">Writing</p><h2>Papers</h2></div>
+      <a class="vlink" href="https://independent.academia.edu/FrankPepper" target="_blank" rel="noopener">My Academia.edu profile ↗</a>
     </div>
+    <div class="pubs" id="pubs"></div>
     <div class="papers">
       <article class="paper">
         <p class="eyebrow">Hypothesis paper · with references</p>
@@ -753,6 +763,17 @@ figcaption{font:.74rem var(--mono);color:var(--muted);padding:9px 12px;letter-sp
     document.querySelector(".pw").addEventListener("click",e=>{const b=e.target.closest(".pwbtn");if(b)pick(b.dataset.i)});
     pick(0);
   }
+
+  /* ---------- Research: papers on Academia.edu ---------- */
+  // Add each paper's title as t once known; links open on Academia.edu.
+  const PUBS=[
+    {id:"175880032",t:""},
+    {id:"165634148",t:""},
+    {id:"165013257",t:""},
+    {id:"164999688",t:""}
+  ];
+  const pubs=$("#pubs");
+  if(pubs)pubs.innerHTML=PUBS.map((x,i)=>`<a href="https://academia.edu/resource/work/${x.id}" target="_blank" rel="noopener"><b>${x.t||"Paper "+(i+1)+" on Academia.edu"}</b><span>Read on Academia.edu ↗</span></a>`).join("");
 
   /* ---------- Music ---------- */
   // Add links here to show the "Tracks & mixes" section, e.g.
