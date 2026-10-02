@@ -1,11 +1,11 @@
 # vantageos.ca: the "What is VantageOS?" page
 
-Built 2 October 2026 from `GronorthBuddyGuy/vantageos-v2.4`, branch `claude/tour-refresh`
+Built 2 October 2026 from `GronorthBuddyGuy/vantageos-v2.4`, branch `claude/tour-refresh-oct2b` (main at b365414b plus the open fixes)
 (`scripts/overview/build_overview.py`, then `scripts/overview/build_site.py`).
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole page, with the 37 tour screenshots built in |
+| `index.html` | The whole page, with the 40 tour screenshots built in |
 | `og-image.png` | The picture LinkedIn and others show when someone shares vantageos.ca |
 
 ## Putting it live (Netlify)
